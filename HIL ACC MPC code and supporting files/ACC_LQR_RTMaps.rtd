@@ -2,8 +2,10 @@
 <RTMapsDiagram version="4.8.0" EngineVersion="4.13" xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd">
   <RequiredPackages>
     <File Version="3.21.1"><![CDATA[C:/Program Files/Intempora/RTMaps 4/packages/rtmaps_mathworks.pck]]><Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_mathworks.pck]]></Relative></File>
-    <File Version="1.4"><![CDATA[C:/Users/darkh/Documents/UWAFT/CAV/ACC Stuff/ACC_MPC_Controllers/Project Code and Supporting Files/LQR_forRTMaps.pck]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../Project Code and Supporting Files/LQR_forRTMaps.pck]]></Relative></File>
-    <File Version="1.5"><![CDATA[C:/Users/darkh/Documents/UWAFT/CAV/ACC Stuff/ACC_MPC_Controllers/Project Code and Supporting Files/LQR_forRTMaps10ms.pck]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../Project Code and Supporting Files/LQR_forRTMaps10ms.pck]]></Relative></File>
+    <File Version="1.4"><![CDATA[D:/UWAFT/CAV/ACC Resources and MPC code/ACC_MPC_Controllers/Project Code and Supporting Files/AccelSmoothingAndSaturation_4RTMaps.pck]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../Project Code and Supporting Files/AccelSmoothingAndSaturation_4RTMaps.pck]]></Relative></File>
+    <File Version="1.4"><![CDATA[D:/UWAFT/CAV/ACC Resources and MPC code/ACC_MPC_Controllers/Project Code and Supporting Files/LQR_forRTMaps.pck]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../Project Code and Supporting Files/LQR_forRTMaps.pck]]></Relative></File>
+    <File Version="1.5"><![CDATA[D:/UWAFT/CAV/ACC Resources and MPC code/ACC_MPC_Controllers/Project Code and Supporting Files/LQR_forRTMaps10ms.pck]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../Project Code and Supporting Files/LQR_forRTMaps10ms.pck]]></Relative></File>
+    <File Version="1.1"><![CDATA[D:/UWAFT/CAV/ACC Resources and MPC code/ACC_MPC_Controllers/Project Code and Supporting Files/unit_delay_4RTMaps.pck]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../Project Code and Supporting Files/unit_delay_4RTMaps.pck]]></Relative></File>
   </RequiredPackages>
   <EngineProperties>
     <Property LongName="Engine.startTimespeed" Type="1">1000</Property>
@@ -27,7 +29,66 @@
   <ClocksManagement>
     <Property LongName="ClocksManagement.activeClock" Type="4"><![CDATA[1|0|RTMaps_standard_clock]]></Property>
   </ClocksManagement>
-  <Component InstanceName="Devectorizer_1" Model="Devectorizer" Version="1.3.2" x="496" y="224" z="0">
+  <Component InstanceName="AccelSmoothingAndSaturation_4RTMaps_1" Model="AccelSmoothingAndSaturation_4RTMaps" Version="1.4" x="816" y="192" z="0">
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.rho" Name="rho">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.rho.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.rho.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.JerkMax" Name="JerkMax">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.JerkMax.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.JerkMax.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.TimeStep" Name="TimeStep">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.TimeStep.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.TimeStep.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMax" Name="AccelMax">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMax.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMax.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMin" Name="AccelMin">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMin.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMin.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.DriverSetSpeed" Name="DriverSetSpeed">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.DriverSetSpeed.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.DriverSetSpeed.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_LQR" Name="u_LQR">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_LQR.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_LQR.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.HostVelocity" Name="HostVelocity">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.HostVelocity.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.HostVelocity.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_k_minus_1" Name="u_k_minus_1">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_k_minus_1.readerType" Type="1">4</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_k_minus_1.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_cmd" Name="u_cmd">
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_cmd.subsampling" Type="1">1</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_cmd.fifosize" Type="1">16</Property>
+      <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.u_cmd.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.executionMode" Type="4"><![CDATA[3|0|Periodic|Triggered by First Input|Periodic Sampling While Post-Processing]]></Property>
+    <ReadOnlyProperty LongName="AccelSmoothingAndSaturation_4RTMaps_1.executionPeriod" Type="1" SubType="1">50000</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_input_values_begin" Type="3" SubType="256"><![CDATA[input_values]]></ReadOnlyProperty>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_rho" Type="0">false</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_JerkMax" Type="0">false</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_TimeStep" Type="0">false</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_AccelMax" Type="0">false</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_AccelMin" Type="0">false</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_DriverSetSpeed" Type="0">false</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_u_LQR" Type="0">false</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_HostVelocity" Type="0">false</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_force_value_of_u_k_minus_1" Type="0">false</Property>
+    <ReadOnlyProperty LongName="AccelSmoothingAndSaturation_4RTMaps_1.p_input_values_end" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.threaded" Type="0">true</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.priority" Type="1">128</Property>
+    <Property LongName="AccelSmoothingAndSaturation_4RTMaps_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="Devectorizer_1" Model="Devectorizer" Version="1.3.2" x="280" y="320" z="0">
     <Input LongName="Devectorizer_1.iVector" Name="iVector">
       <Property LongName="Devectorizer_1.iVector.readerType" Type="1">0</Property>
       <Property LongName="Devectorizer_1.iVector.subsampling" Type="1">1</Property>
@@ -47,7 +108,47 @@
     <Property LongName="Devectorizer_1.priority" Type="1">128</Property>
     <Property LongName="Devectorizer_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="Float_constants_generator_1" Model="Float_constants_generator" Version="2.2" x="336" y="224" z="0">
+  <Component InstanceName="Devectorizer_2" Model="Devectorizer" Version="1.3.2" x="632" y="192" z="0">
+    <Input LongName="Devectorizer_2.iVector" Name="iVector">
+      <Property LongName="Devectorizer_2.iVector.readerType" Type="1">0</Property>
+      <Property LongName="Devectorizer_2.iVector.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="Devectorizer_2.element0" Name="element0">
+      <Property LongName="Devectorizer_2.element0.subsampling" Type="1">1</Property>
+      <Property LongName="Devectorizer_2.element0.fifosize" Type="1">16</Property>
+      <Property LongName="Devectorizer_2.element0.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Devectorizer_2.element1" Name="element1">
+      <Property LongName="Devectorizer_2.element1.subsampling" Type="1">1</Property>
+      <Property LongName="Devectorizer_2.element1.fifosize" Type="1">16</Property>
+      <Property LongName="Devectorizer_2.element1.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Devectorizer_2.element2" Name="element2">
+      <Property LongName="Devectorizer_2.element2.subsampling" Type="1">1</Property>
+      <Property LongName="Devectorizer_2.element2.fifosize" Type="1">16</Property>
+      <Property LongName="Devectorizer_2.element2.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Devectorizer_2.element3" Name="element3">
+      <Property LongName="Devectorizer_2.element3.subsampling" Type="1">1</Property>
+      <Property LongName="Devectorizer_2.element3.fifosize" Type="1">16</Property>
+      <Property LongName="Devectorizer_2.element3.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Devectorizer_2.element4" Name="element4">
+      <Property LongName="Devectorizer_2.element4.subsampling" Type="1">1</Property>
+      <Property LongName="Devectorizer_2.element4.fifosize" Type="1">16</Property>
+      <Property LongName="Devectorizer_2.element4.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Devectorizer_2.element5" Name="element5">
+      <Property LongName="Devectorizer_2.element5.subsampling" Type="1">1</Property>
+      <Property LongName="Devectorizer_2.element5.fifosize" Type="1">16</Property>
+      <Property LongName="Devectorizer_2.element5.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Devectorizer_2.vectorSize" Type="1">6</Property>
+    <Property LongName="Devectorizer_2.threaded" Type="0">true</Property>
+    <Property LongName="Devectorizer_2.priority" Type="1">128</Property>
+    <Property LongName="Devectorizer_2.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="Float_constants_generator_1" Model="Float_constants_generator" Version="2.2" x="120" y="320" z="0">
     <Output LongName="Float_constants_generator_1.output" Name="output">
       <Property LongName="Float_constants_generator_1.output.subsampling" Type="1">1</Property>
       <Property LongName="Float_constants_generator_1.output.fifosize" Type="1">16</Property>
@@ -57,13 +158,33 @@
     <Property LongName="Float_constants_generator_1.outputWhenValueChanges" Type="0">true</Property>
     <Property LongName="Float_constants_generator_1.vectorSize" Type="1">2</Property>
     <Property LongName="Float_constants_generator_1.outputPeriod" Type="1">10000</Property>
-    <Property LongName="Float_constants_generator_1.value_1" Type="2">0.3091</Property>
-    <Property LongName="Float_constants_generator_1.value_2" Type="2">-0.5956</Property>
+    <Property LongName="Float_constants_generator_1.value_1" Type="2">0.2192</Property>
+    <Property LongName="Float_constants_generator_1.value_2" Type="2">-0.5788</Property>
     <Property LongName="Float_constants_generator_1.threaded" Type="0">true</Property>
     <Property LongName="Float_constants_generator_1.priority" Type="1">128</Property>
     <Property LongName="Float_constants_generator_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="LQR_forRTMap_50ms" Model="LQR_forRTMaps" Version="1.4" x="680" y="128" z="0">
+  <Component InstanceName="Float_constants_generator_2" Model="Float_constants_generator" Version="2.2" x="528" y="192" z="0">
+    <Output LongName="Float_constants_generator_2.output" Name="output">
+      <Property LongName="Float_constants_generator_2.output.subsampling" Type="1">1</Property>
+      <Property LongName="Float_constants_generator_2.output.fifosize" Type="1">16</Property>
+      <Property LongName="Float_constants_generator_2.output.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Float_constants_generator_2.outputMode" Type="4"><![CDATA[3|1|Once at start|Periodic|Use trigger input]]></Property>
+    <Property LongName="Float_constants_generator_2.outputWhenValueChanges" Type="0">true</Property>
+    <Property LongName="Float_constants_generator_2.vectorSize" Type="1">6</Property>
+    <Property LongName="Float_constants_generator_2.outputPeriod" Type="1">10000</Property>
+    <Property LongName="Float_constants_generator_2.value_1" Type="2">3</Property>
+    <Property LongName="Float_constants_generator_2.value_2" Type="2">5</Property>
+    <Property LongName="Float_constants_generator_2.value_3" Type="2">0.05</Property>
+    <Property LongName="Float_constants_generator_2.value_4" Type="2">3</Property>
+    <Property LongName="Float_constants_generator_2.value_5" Type="2">3.5</Property>
+    <Property LongName="Float_constants_generator_2.value_6" Type="2">25</Property>
+    <Property LongName="Float_constants_generator_2.threaded" Type="0">true</Property>
+    <Property LongName="Float_constants_generator_2.priority" Type="1">128</Property>
+    <Property LongName="Float_constants_generator_2.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="LQR_forRTMap_50ms" Model="LQR_forRTMaps" Version="1.4" x="464" y="288" z="0">
     <Input LongName="LQR_forRTMap_50ms.relative_spd" Name="relative_spd">
       <Property LongName="LQR_forRTMap_50ms.relative_spd.readerType" Type="1">4</Property>
       <Property LongName="LQR_forRTMap_50ms.relative_spd.subsampling" Type="1">1</Property>
@@ -97,7 +218,7 @@
     <Property LongName="LQR_forRTMap_50ms.priority" Type="1">128</Property>
     <Property LongName="LQR_forRTMap_50ms.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="LQR_forRTMaps10ms_1" Model="LQR_forRTMaps10ms" Version="1.5" x="784" y="288" z="0">
+  <Component InstanceName="LQR_forRTMaps10ms_1" Model="LQR_forRTMaps10ms" Version="1.5" x="72" y="464" z="0">
     <Input LongName="LQR_forRTMaps10ms_1.relative_spd" Name="relative_spd">
       <Property LongName="LQR_forRTMaps10ms_1.relative_spd.readerType" Type="1">4</Property>
       <Property LongName="LQR_forRTMaps10ms_1.relative_spd.subsampling" Type="1">1</Property>
@@ -129,9 +250,9 @@
     <ReadOnlyProperty LongName="LQR_forRTMaps10ms_1.p_input_values_end" Type="0" SubType="512">true</ReadOnlyProperty>
     <Property LongName="LQR_forRTMaps10ms_1.threaded" Type="0">true</Property>
     <Property LongName="LQR_forRTMaps10ms_1.priority" Type="1">128</Property>
-    <Property LongName="LQR_forRTMaps10ms_1.autoStart" Type="0">true</Property>
+    <Property LongName="LQR_forRTMaps10ms_1.autoStart" Type="0">false</Property>
   </Component>
-  <Component InstanceName="LQR_Output" Model="DataViewer" Version="2.1.2" x="912" y="40" z="0">
+  <Component InstanceName="LQR_Output" Model="DataViewer" Version="2.1.1" x="936" y="40" z="0">
     <Input LongName="LQR_Output.input_0" Name="input_0">
       <Property LongName="LQR_Output.input_0.readerType" Type="1">4</Property>
       <Property LongName="LQR_Output.input_0.subsampling" Type="1">1</Property>
@@ -148,8 +269,8 @@
     <Property LongName="LQR_Output.moveable" Type="0">true</Property>
     <Property LongName="LQR_Output.hidden" Type="0">false</Property>
     <Property LongName="LQR_Output.title" Type="3"><![CDATA[]]></Property>
-    <Property LongName="LQR_Output.x" Type="1">18</Property>
-    <Property LongName="LQR_Output.y" Type="1">71</Property>
+    <Property LongName="LQR_Output.x" Type="1">12</Property>
+    <Property LongName="LQR_Output.y" Type="1">73</Property>
     <Property LongName="LQR_Output.width" Type="1">530</Property>
     <Property LongName="LQR_Output.height" Type="1">420</Property>
     <Property LongName="LQR_Output.end_guard" Type="0" SubType="128">true</Property>
@@ -172,13 +293,13 @@
     <Property LongName="LQR_Output.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
     <Property LongName="LQR_Output.hexDisplay" Type="0">false</Property>
     <Property LongName="LQR_Output.internalState" Type="3" SubType="128"><![CDATA[238;282]]></Property>
-    <Property LongName="LQR_Output.expandedState" Type="3" SubType="128"><![CDATA[0|;0|]]></Property>
+    <Property LongName="LQR_Output.expandedState" Type="3" SubType="128"><![CDATA[1|LQR_forRTMap_50ms.Outport;0|Info:LQR_forRTMap_50ms.Outport;1|Data:LQR_forRTMap_50ms.Outport;0|]]></Property>
     <ReadOnlyProperty LongName="LQR_Output.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
     <Property LongName="LQR_Output.threaded" Type="0">true</Property>
     <Property LongName="LQR_Output.priority" Type="1">128</Property>
     <Property LongName="LQR_Output.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="RecFile_1" Model="RecFile" Version="2.17.1" x="1152" y="288" z="0">
+  <Component InstanceName="RecFile_1" Model="RecFile" Version="2.17.1" x="288" y="464" z="0">
     <Input LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.input" Name="input">
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.input.readerType" Type="1">0</Property>
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.input.subsampling" Type="1">1</Property>
@@ -196,8 +317,21 @@
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.useTimestamp" Type="0">false</Property>
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.threaded" Type="0">true</Property>
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.priority" Type="1">128</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.timestamp" Type="0">true</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.timeOfIssue" Type="0">true</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.linefeed" Type="1">1</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.scilabFile" Type="0">false</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.initCommands" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.endCommands" Type="3"><![CDATA[]]></Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.shortFileName" Type="0">false</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.timeMilliseconds" Type="0">false</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.doubles_precision" Type="1">12</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.variable_vector_size" Type="0">false</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.row_padding_value" Type="2">0</Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.matrix_name" Type="4"><![CDATA[3|0|Recorder Input Name|Recorder Input Alias|Custom]]></Property>
+      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.custom_matrix_name" Type="3"><![CDATA[]]></Property>
     </Input>
-    <Property LongName="RecFile_1.path" Type="3" SubType="32"><![CDATA[C:/Users/darkh/Documents/UWAFT/CAV/ACC Stuff/ACC_MPC_Controllers/HIL ACC MPC code and supporting files/RTMaps_data_recordings/]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/RTMaps_data_recordings]]></Relative></Property>
+    <Property LongName="RecFile_1.path" Type="3" SubType="32"><![CDATA[C:/Users/darkh/OneDrive/Documents/]]></Property>
     <ReadOnlyProperty LongName="RecFile_1.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
     <Property LongName="RecFile_1.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
     <Property LongName="RecFile_1.comments" Type="3"><![CDATA[]]></Property>
@@ -208,14 +342,14 @@
     <Property LongName="RecFile_1.record_to_subfolders" Type="0">false</Property>
     <Property LongName="RecFile_1.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
     <Property LongName="RecFile_1.allow_record_overwrite" Type="0">false</Property>
-    <ReadOnlyProperty LongName="RecFile_1.record_start_time" Type="3"><![CDATA[20251031_145005402000]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_1.record_start_time" Type="3"><![CDATA[]]></ReadOnlyProperty>
     <ReadOnlyProperty LongName="RecFile_1.triggered_record_methods" Type="3"><![CDATA[LQR_forRTMaps10ms_1.Outport]]></ReadOnlyProperty>
     <Property LongName="RecFile_1.recs_absolute_paths" Type="0">false</Property>
     <Property LongName="RecFile_1.threaded" Type="0">false</Property>
     <Property LongName="RecFile_1.priority" Type="1">128</Property>
-    <Property LongName="RecFile_1.autoStart" Type="0">true</Property>
+    <Property LongName="RecFile_1.autoStart" Type="0">false</Property>
   </Component>
-  <Component InstanceName="Simulink_feedback" Model="DataViewer" Version="2.1.2" x="536" y="48" z="0">
+  <Component InstanceName="Simulink_feedback" Model="DataViewer" Version="2.1.1" x="400" y="40" z="0">
     <Input LongName="Simulink_feedback.input_0" Name="input_0">
       <Property LongName="Simulink_feedback.input_0.readerType" Type="1">4</Property>
       <Property LongName="Simulink_feedback.input_0.subsampling" Type="1">1</Property>
@@ -223,6 +357,10 @@
     <Input LongName="Simulink_feedback.input_1" Name="input_1">
       <Property LongName="Simulink_feedback.input_1.readerType" Type="1">4</Property>
       <Property LongName="Simulink_feedback.input_1.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Simulink_feedback.input_2" Name="input_2">
+      <Property LongName="Simulink_feedback.input_2.readerType" Type="1">4</Property>
+      <Property LongName="Simulink_feedback.input_2.subsampling" Type="1">1</Property>
     </Input>
     <Property LongName="Simulink_feedback.begin_guard" Type="0" SubType="128">true</Property>
     <ReadOnlyProperty LongName="Simulink_feedback.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
@@ -239,7 +377,7 @@
     <Property LongName="Simulink_feedback.end_guard" Type="0" SubType="128">true</Property>
     <ReadOnlyProperty LongName="Simulink_feedback.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
     <ReadOnlyProperty LongName="Simulink_feedback.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
-    <Property LongName="Simulink_feedback.nbInputs" Type="1">2</Property>
+    <Property LongName="Simulink_feedback.nbInputs" Type="1">3</Property>
     <Property LongName="Simulink_feedback.compactMode" Type="0">false</Property>
     <Property LongName="Simulink_feedback.showInfo" Type="0">true</Property>
     <Property LongName="Simulink_feedback.showData" Type="0">true</Property>
@@ -256,13 +394,13 @@
     <Property LongName="Simulink_feedback.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
     <Property LongName="Simulink_feedback.hexDisplay" Type="0">false</Property>
     <Property LongName="Simulink_feedback.internalState" Type="3" SubType="128"><![CDATA[238;282]]></Property>
-    <Property LongName="Simulink_feedback.expandedState" Type="3" SubType="128"><![CDATA[0|;0|]]></Property>
+    <Property LongName="Simulink_feedback.expandedState" Type="3" SubType="128"><![CDATA[1|SimulinkDSpaceDeserialize_1.output0;0|Info:SimulinkDSpaceDeserialize_1.output0;1|Data:SimulinkDSpaceDeserialize_1.output0;1|SimulinkDSpaceDeserialize_1.output1;0|Info:SimulinkDSpaceDeserialize_1.output1;1|Data:SimulinkDSpaceDeserialize_1.output1;1|SimulinkDSpaceDeserialize_1.output2;0|Info:SimulinkDSpaceDeserialize_1.output2;1|Data:SimulinkDSpaceDeserialize_1.output2]]></Property>
     <ReadOnlyProperty LongName="Simulink_feedback.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
     <Property LongName="Simulink_feedback.threaded" Type="0">true</Property>
     <Property LongName="Simulink_feedback.priority" Type="1">128</Property>
     <Property LongName="Simulink_feedback.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="SimulinkDSpaceDeserialize_1" Model="SimulinkDSpaceDeserialize" Version="1.2" x="344" y="128" z="0">
+  <Component InstanceName="SimulinkDSpaceDeserialize_1" Model="SimulinkDSpaceDeserialize" Version="1.2" x="224" y="128" z="0">
     <Input LongName="SimulinkDSpaceDeserialize_1.input" Name="input">
       <Property LongName="SimulinkDSpaceDeserialize_1.input.readerType" Type="1">0</Property>
       <Property LongName="SimulinkDSpaceDeserialize_1.input.subsampling" Type="1">1</Property>
@@ -277,18 +415,25 @@
       <Property LongName="SimulinkDSpaceDeserialize_1.output1.fifosize" Type="1">16</Property>
       <Property LongName="SimulinkDSpaceDeserialize_1.output1.periodic" Type="0">false</Property>
     </Output>
-    <Property LongName="SimulinkDSpaceDeserialize_1.dSPACEformat" Type="3"><![CDATA[[ 9  9 ]]]></Property>
-    <Property LongName="SimulinkDSpaceDeserialize_1.numberOfOutputs" Type="1">2</Property>
+    <Output LongName="SimulinkDSpaceDeserialize_1.output2" Name="output2">
+      <Property LongName="SimulinkDSpaceDeserialize_1.output2.subsampling" Type="1">1</Property>
+      <Property LongName="SimulinkDSpaceDeserialize_1.output2.fifosize" Type="1">16</Property>
+      <Property LongName="SimulinkDSpaceDeserialize_1.output2.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="SimulinkDSpaceDeserialize_1.dSPACEformat" Type="3"><![CDATA[[ 9  9  9 ]]]></Property>
+    <Property LongName="SimulinkDSpaceDeserialize_1.numberOfOutputs" Type="1">3</Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.outputType0" Type="4"><![CDATA[9|8|BOOL|INT8|UINT8|INT16|UINT16|INT32|UINT32|FLOAT|DOUBLE]]></Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.outputSize0" Type="1">1</Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.outputType1" Type="4"><![CDATA[9|8|BOOL|INT8|UINT8|INT16|UINT16|INT32|UINT32|FLOAT|DOUBLE]]></Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.outputSize1" Type="1">1</Property>
+    <Property LongName="SimulinkDSpaceDeserialize_1.outputType2" Type="4"><![CDATA[9|8|BOOL|INT8|UINT8|INT16|UINT16|INT32|UINT32|FLOAT|DOUBLE]]></Property>
+    <Property LongName="SimulinkDSpaceDeserialize_1.outputSize2" Type="1">1</Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.use_first_value_as_timestamp" Type="0">false</Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.threaded" Type="0">true</Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.priority" Type="1">128</Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="SimulinkDSpaceSerialize_1" Model="SimulinkDSpaceSerialize" Version="1.3" x="992" y="128" z="0">
+  <Component InstanceName="SimulinkDSpaceSerialize_1" Model="SimulinkDSpaceSerialize" Version="1.3" x="1080" y="192" z="0">
     <Input LongName="SimulinkDSpaceSerialize_1.input0" Name="input0">
       <Property LongName="SimulinkDSpaceSerialize_1.input0.readerType" Type="1">4</Property>
       <Property LongName="SimulinkDSpaceSerialize_1.input0.subsampling" Type="1">1</Property>
@@ -308,17 +453,17 @@
     <Property LongName="SimulinkDSpaceSerialize_1.priority" Type="1">128</Property>
     <Property LongName="SimulinkDSpaceSerialize_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="UDP_from_Simulink" Model="UDPSocket" Version="2.5.6" x="192" y="128" z="0">
+  <Component InstanceName="UDP_from_Simulink" Model="UDPSocket" Version="2.5.6" x="72" y="128" z="0">
     <Output LongName="UDP_from_Simulink.output" Name="output">
       <Property LongName="UDP_from_Simulink.output.subsampling" Type="1">1</Property>
       <Property LongName="UDP_from_Simulink.output.fifosize" Type="1">128</Property>
       <Property LongName="UDP_from_Simulink.output.periodic" Type="0">false</Property>
     </Output>
     <Property LongName="UDP_from_Simulink.Type" Type="4"><![CDATA[3|0|UDP|Broadcast|Multicast]]></Property>
-    <Property LongName="UDP_from_Simulink.RemotePort" Type="1">11111</Property>
-    <Property LongName="UDP_from_Simulink.RemoteIP" Type="3"><![CDATA[0.0.0.0]]></Property>
-    <Property LongName="UDP_from_Simulink.LocalPort" Type="1">-1</Property>
-    <Property LongName="UDP_from_Simulink.LocalIP" Type="3"><![CDATA[0.0.0.0]]></Property>
+    <Property LongName="UDP_from_Simulink.RemotePort" Type="1">22222</Property>
+    <Property LongName="UDP_from_Simulink.RemoteIP" Type="3"><![CDATA[192.168.140.11]]></Property>
+    <Property LongName="UDP_from_Simulink.LocalPort" Type="1">11111</Property>
+    <Property LongName="UDP_from_Simulink.LocalIP" Type="3"><![CDATA[192.168.140.10]]></Property>
     <Property LongName="UDP_from_Simulink.Family" Type="4"><![CDATA[3|0|Auto|IPv4|IPv6]]></Property>
     <Property LongName="UDP_from_Simulink.EnableSend" Type="0">false</Property>
     <Property LongName="UDP_from_Simulink.EnableRecv" Type="0">true</Property>
@@ -329,16 +474,16 @@
     <Property LongName="UDP_from_Simulink.priority" Type="1">128</Property>
     <Property LongName="UDP_from_Simulink.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="UDPSocket_2" Model="UDPSocket" Version="2.5.6" x="1176" y="128" z="0">
+  <Component InstanceName="UDPSocket_2" Model="UDPSocket" Version="2.5.6" x="1272" y="192" z="0">
     <Input LongName="UDPSocket_2.input" Name="input">
       <Property LongName="UDPSocket_2.input.readerType" Type="1">0</Property>
       <Property LongName="UDPSocket_2.input.subsampling" Type="1">1</Property>
     </Input>
     <Property LongName="UDPSocket_2.Type" Type="4"><![CDATA[3|0|UDP|Broadcast|Multicast]]></Property>
     <Property LongName="UDPSocket_2.RemotePort" Type="1">25000</Property>
-    <Property LongName="UDPSocket_2.RemoteIP" Type="3"><![CDATA[10.36.24.229]]></Property>
+    <Property LongName="UDPSocket_2.RemoteIP" Type="3"><![CDATA[192.168.140.11]]></Property>
     <Property LongName="UDPSocket_2.LocalPort" Type="1">-1</Property>
-    <Property LongName="UDPSocket_2.LocalIP" Type="3"><![CDATA[0.0.0.0]]></Property>
+    <Property LongName="UDPSocket_2.LocalIP" Type="3"><![CDATA[192.168.140.10]]></Property>
     <Property LongName="UDPSocket_2.Family" Type="4"><![CDATA[3|0|Auto|IPv4|IPv6]]></Property>
     <Property LongName="UDPSocket_2.EnableSend" Type="0">true</Property>
     <Property LongName="UDPSocket_2.EnableRecv" Type="0">false</Property>
@@ -349,42 +494,73 @@
     <Property LongName="UDPSocket_2.priority" Type="1">128</Property>
     <Property LongName="UDPSocket_2.autoStart" Type="0">true</Property>
   </Component>
+  <Component InstanceName="unit_delay_4RTMaps_1" Model="unit_delay_4RTMaps" Version="1.1" x="688" y="392" z="0">
+    <Input LongName="unit_delay_4RTMaps_1.unit_delay_in" Name="unit_delay_in">
+      <Property LongName="unit_delay_4RTMaps_1.unit_delay_in.readerType" Type="1">4</Property>
+      <Property LongName="unit_delay_4RTMaps_1.unit_delay_in.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="unit_delay_4RTMaps_1.unit_delay_out" Name="unit_delay_out">
+      <Property LongName="unit_delay_4RTMaps_1.unit_delay_out.subsampling" Type="1">1</Property>
+      <Property LongName="unit_delay_4RTMaps_1.unit_delay_out.fifosize" Type="1">16</Property>
+      <Property LongName="unit_delay_4RTMaps_1.unit_delay_out.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="unit_delay_4RTMaps_1.executionMode" Type="4"><![CDATA[3|0|Periodic|Triggered by First Input|Periodic Sampling While Post-Processing]]></Property>
+    <ReadOnlyProperty LongName="unit_delay_4RTMaps_1.executionPeriod" Type="1" SubType="1">50000</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="unit_delay_4RTMaps_1.p_model_params_begin" Type="3" SubType="256"><![CDATA[model_parameters]]></ReadOnlyProperty>
+    <Property LongName="unit_delay_4RTMaps_1.UnitDelay_InitialCondition" Type="3"><![CDATA[0.0]]></Property>
+    <ReadOnlyProperty LongName="unit_delay_4RTMaps_1.p_model_params_end" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="unit_delay_4RTMaps_1.threaded" Type="0">true</Property>
+    <Property LongName="unit_delay_4RTMaps_1.priority" Type="1">128</Property>
+    <Property LongName="unit_delay_4RTMaps_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Connection Output="Devectorizer_2.element0" Input="AccelSmoothingAndSaturation_4RTMaps_1.rho"/>
+  <Connection Output="Devectorizer_2.element1" Input="AccelSmoothingAndSaturation_4RTMaps_1.JerkMax"/>
+  <Connection Output="Devectorizer_2.element2" Input="AccelSmoothingAndSaturation_4RTMaps_1.TimeStep"/>
+  <Connection Output="Devectorizer_2.element3" Input="AccelSmoothingAndSaturation_4RTMaps_1.AccelMax"/>
+  <Connection Output="Devectorizer_2.element4" Input="AccelSmoothingAndSaturation_4RTMaps_1.AccelMin"/>
+  <Connection Output="Devectorizer_2.element5" Input="AccelSmoothingAndSaturation_4RTMaps_1.DriverSetSpeed"/>
+  <Connection Output="LQR_forRTMap_50ms.Outport" Input="AccelSmoothingAndSaturation_4RTMaps_1.u_LQR"/>
+  <Connection Output="SimulinkDSpaceDeserialize_1.output2" Input="AccelSmoothingAndSaturation_4RTMaps_1.HostVelocity"/>
+  <Connection Output="AccelSmoothingAndSaturation_4RTMaps_1.u_cmd" Input="AccelSmoothingAndSaturation_4RTMaps_1.u_k_minus_1"/>
   <Connection Output="Float_constants_generator_1.output" Input="Devectorizer_1.iVector"/>
+  <Connection Output="Float_constants_generator_2.output" Input="Devectorizer_2.iVector"/>
   <Connection Output="SimulinkDSpaceDeserialize_1.output0" Input="LQR_forRTMap_50ms.relative_spd"/>
   <Connection Output="SimulinkDSpaceDeserialize_1.output1" Input="LQR_forRTMap_50ms.foll_dist_err"/>
   <Connection Output="Devectorizer_1.element0" Input="LQR_forRTMap_50ms.K_derr"/>
   <Connection Output="Devectorizer_1.element1" Input="LQR_forRTMap_50ms.K_vh"/>
-  <Connection Output="SimulinkDSpaceDeserialize_1.output0" Input="LQR_forRTMaps10ms_1.relative_spd"/>
-  <Connection Output="SimulinkDSpaceDeserialize_1.output1" Input="LQR_forRTMaps10ms_1.foll_dist_err"/>
-  <Connection Output="Devectorizer_1.element0" Input="LQR_forRTMaps10ms_1.K_derr"/>
-  <Connection Output="Devectorizer_1.element1" Input="LQR_forRTMaps10ms_1.K_vh"/>
   <Connection Output="LQR_forRTMap_50ms.Outport" Input="LQR_Output.input_0"/>
-  <Connection Output="LQR_forRTMaps10ms_1.Outport" Input="LQR_Output.input_1"/>
+  <Connection Output="AccelSmoothingAndSaturation_4RTMaps_1.u_cmd" Input="LQR_Output.input_1"/>
   <Connection Output="SimulinkDSpaceDeserialize_1.output0" Input="Simulink_feedback.input_0"/>
   <Connection Output="SimulinkDSpaceDeserialize_1.output1" Input="Simulink_feedback.input_1"/>
+  <Connection Output="SimulinkDSpaceDeserialize_1.output2" Input="Simulink_feedback.input_2"/>
   <Connection Output="UDP_from_Simulink.output" Input="SimulinkDSpaceDeserialize_1.input"/>
-  <Connection Output="LQR_forRTMap_50ms.Outport" Input="SimulinkDSpaceSerialize_1.input0"/>
   <Connection Output="SimulinkDSpaceSerialize_1.outputStream8" Input="UDPSocket_2.input"/>
   <Connection Input="RecFile_1.LQR_forRTMaps10ms_1.Outport.input" Output="LQR_forRTMaps10ms_1.Outport">
-    <Record Method="numeric_binary" neverskipping="false" useTimestamp="false"/>
+    <Record Method="mfile" neverskipping="false" useTimestamp="false"/>
   </Connection>
   <RTBoardView ID="JavaStudio1.0">
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMax" color="0"/>
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMin" color="0"/>
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.DriverSetSpeed" color="0"/>
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.HostVelocity" color="0"/>
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.JerkMax" color="0"/>
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.rho" color="0"/>
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.TimeStep" color="0"/>
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.u_k_minus_1" color="0"/>
+    <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.u_LQR" color="0"/>
     <ConnectionShape InstanceName="Devectorizer_1.iVector" color="0"/>
+    <ConnectionShape InstanceName="Devectorizer_2.iVector" color="0"/>
     <ConnectionShape InstanceName="LQR_forRTMap_50ms.foll_dist_err" color="0"/>
     <ConnectionShape InstanceName="LQR_forRTMap_50ms.K_derr" color="0"/>
     <ConnectionShape InstanceName="LQR_forRTMap_50ms.K_vh" color="0"/>
     <ConnectionShape InstanceName="LQR_forRTMap_50ms.relative_spd" color="0"/>
-    <ConnectionShape InstanceName="LQR_forRTMaps10ms_1.foll_dist_err" color="0"/>
-    <ConnectionShape InstanceName="LQR_forRTMaps10ms_1.K_derr" color="0"/>
-    <ConnectionShape InstanceName="LQR_forRTMaps10ms_1.K_vh" color="0"/>
-    <ConnectionShape InstanceName="LQR_forRTMaps10ms_1.relative_spd" color="0"/>
     <ConnectionShape InstanceName="LQR_Output.input_0" color="0"/>
     <ConnectionShape InstanceName="LQR_Output.input_1" color="0"/>
     <ConnectionShape InstanceName="RecFile_1.LQR_forRTMaps10ms_1.Outport.input" color="0"/>
     <ConnectionShape InstanceName="Simulink_feedback.input_0" color="0"/>
     <ConnectionShape InstanceName="Simulink_feedback.input_1" color="0"/>
+    <ConnectionShape InstanceName="Simulink_feedback.input_2" color="0"/>
     <ConnectionShape InstanceName="SimulinkDSpaceDeserialize_1.input" color="0"/>
-    <ConnectionShape InstanceName="SimulinkDSpaceSerialize_1.input0" color="0"/>
     <ConnectionShape InstanceName="UDPSocket_2.input" color="0"/>
   </RTBoardView>
 </RTMapsDiagram>
