@@ -148,8 +148,8 @@
     <Property LongName="LQR_Output.moveable" Type="0">true</Property>
     <Property LongName="LQR_Output.hidden" Type="0">false</Property>
     <Property LongName="LQR_Output.title" Type="3"><![CDATA[]]></Property>
-    <Property LongName="LQR_Output.x" Type="1">12</Property>
-    <Property LongName="LQR_Output.y" Type="1">73</Property>
+    <Property LongName="LQR_Output.x" Type="1">18</Property>
+    <Property LongName="LQR_Output.y" Type="1">71</Property>
     <Property LongName="LQR_Output.width" Type="1">530</Property>
     <Property LongName="LQR_Output.height" Type="1">420</Property>
     <Property LongName="LQR_Output.end_guard" Type="0" SubType="128">true</Property>
@@ -172,13 +172,13 @@
     <Property LongName="LQR_Output.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
     <Property LongName="LQR_Output.hexDisplay" Type="0">false</Property>
     <Property LongName="LQR_Output.internalState" Type="3" SubType="128"><![CDATA[238;282]]></Property>
-    <Property LongName="LQR_Output.expandedState" Type="3" SubType="128"><![CDATA[1|LQR_forRTMap_50ms.Outport;0|Info:LQR_forRTMap_50ms.Outport;1|Data:LQR_forRTMap_50ms.Outport;1|LQR_forRTMaps10ms_1.Outport;0|Info:LQR_forRTMaps10ms_1.Outport;1|Data:LQR_forRTMaps10ms_1.Outport]]></Property>
+    <Property LongName="LQR_Output.expandedState" Type="3" SubType="128"><![CDATA[0|;0|]]></Property>
     <ReadOnlyProperty LongName="LQR_Output.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
     <Property LongName="LQR_Output.threaded" Type="0">true</Property>
     <Property LongName="LQR_Output.priority" Type="1">128</Property>
     <Property LongName="LQR_Output.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="RecFile_1" Model="RecFile" Version="2.17.1" x="1144" y="288" z="0">
+  <Component InstanceName="RecFile_1" Model="RecFile" Version="2.17.1" x="1152" y="288" z="0">
     <Input LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.input" Name="input">
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.input.readerType" Type="1">0</Property>
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.input.subsampling" Type="1">1</Property>
@@ -196,21 +196,8 @@
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.useTimestamp" Type="0">false</Property>
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.threaded" Type="0">true</Property>
       <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.priority" Type="1">128</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.timestamp" Type="0">true</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.timeOfIssue" Type="0">true</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.linefeed" Type="1">1</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.scilabFile" Type="0">false</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.initCommands" Type="3"><![CDATA[]]></Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.endCommands" Type="3"><![CDATA[]]></Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.shortFileName" Type="0">false</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.timeMilliseconds" Type="0">false</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.doubles_precision" Type="1">12</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.variable_vector_size" Type="0">false</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.row_padding_value" Type="2">0</Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.matrix_name" Type="4"><![CDATA[3|0|Recorder Input Name|Recorder Input Alias|Custom]]></Property>
-      <Property LongName="RecFile_1.LQR_forRTMaps10ms_1.Outport.custom_matrix_name" Type="3"><![CDATA[]]></Property>
     </Input>
-    <Property LongName="RecFile_1.path" Type="3" SubType="32"><![CDATA[C:/Users/darkh/OneDrive/Documents/]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../../../../../../OneDrive/Documents]]></Relative></Property>
+    <Property LongName="RecFile_1.path" Type="3" SubType="32"><![CDATA[C:/Users/darkh/Documents/UWAFT/CAV/ACC Stuff/ACC_MPC_Controllers/HIL ACC MPC code and supporting files/RTMaps_data_recordings/]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/RTMaps_data_recordings]]></Relative></Property>
     <ReadOnlyProperty LongName="RecFile_1.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
     <Property LongName="RecFile_1.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
     <Property LongName="RecFile_1.comments" Type="3"><![CDATA[]]></Property>
@@ -221,14 +208,14 @@
     <Property LongName="RecFile_1.record_to_subfolders" Type="0">false</Property>
     <Property LongName="RecFile_1.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
     <Property LongName="RecFile_1.allow_record_overwrite" Type="0">false</Property>
-    <ReadOnlyProperty LongName="RecFile_1.record_start_time" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_1.record_start_time" Type="3"><![CDATA[20251031_145005402000]]></ReadOnlyProperty>
     <ReadOnlyProperty LongName="RecFile_1.triggered_record_methods" Type="3"><![CDATA[LQR_forRTMaps10ms_1.Outport]]></ReadOnlyProperty>
     <Property LongName="RecFile_1.recs_absolute_paths" Type="0">false</Property>
     <Property LongName="RecFile_1.threaded" Type="0">false</Property>
     <Property LongName="RecFile_1.priority" Type="1">128</Property>
     <Property LongName="RecFile_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="Simulink_feedback" Model="DataViewer" Version="2.1.2" x="520" y="40" z="0">
+  <Component InstanceName="Simulink_feedback" Model="DataViewer" Version="2.1.2" x="536" y="48" z="0">
     <Input LongName="Simulink_feedback.input_0" Name="input_0">
       <Property LongName="Simulink_feedback.input_0.readerType" Type="1">4</Property>
       <Property LongName="Simulink_feedback.input_0.subsampling" Type="1">1</Property>
@@ -269,7 +256,7 @@
     <Property LongName="Simulink_feedback.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
     <Property LongName="Simulink_feedback.hexDisplay" Type="0">false</Property>
     <Property LongName="Simulink_feedback.internalState" Type="3" SubType="128"><![CDATA[238;282]]></Property>
-    <Property LongName="Simulink_feedback.expandedState" Type="3" SubType="128"><![CDATA[1|SimulinkDSpaceDeserialize_1.output0;0|Info:SimulinkDSpaceDeserialize_1.output0;1|Data:SimulinkDSpaceDeserialize_1.output0;1|SimulinkDSpaceDeserialize_1.output1;0|Info:SimulinkDSpaceDeserialize_1.output1;1|Data:SimulinkDSpaceDeserialize_1.output1]]></Property>
+    <Property LongName="Simulink_feedback.expandedState" Type="3" SubType="128"><![CDATA[0|;0|]]></Property>
     <ReadOnlyProperty LongName="Simulink_feedback.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
     <Property LongName="Simulink_feedback.threaded" Type="0">true</Property>
     <Property LongName="Simulink_feedback.priority" Type="1">128</Property>
@@ -301,7 +288,7 @@
     <Property LongName="SimulinkDSpaceDeserialize_1.priority" Type="1">128</Property>
     <Property LongName="SimulinkDSpaceDeserialize_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="SimulinkDSpaceSerialize_1" Model="SimulinkDSpaceSerialize" Version="1.3" x="912" y="128" z="0">
+  <Component InstanceName="SimulinkDSpaceSerialize_1" Model="SimulinkDSpaceSerialize" Version="1.3" x="992" y="128" z="0">
     <Input LongName="SimulinkDSpaceSerialize_1.input0" Name="input0">
       <Property LongName="SimulinkDSpaceSerialize_1.input0.readerType" Type="1">4</Property>
       <Property LongName="SimulinkDSpaceSerialize_1.input0.subsampling" Type="1">1</Property>
@@ -342,7 +329,7 @@
     <Property LongName="UDP_from_Simulink.priority" Type="1">128</Property>
     <Property LongName="UDP_from_Simulink.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="UDPSocket_2" Model="UDPSocket" Version="2.5.6" x="1104" y="128" z="0">
+  <Component InstanceName="UDPSocket_2" Model="UDPSocket" Version="2.5.6" x="1176" y="128" z="0">
     <Input LongName="UDPSocket_2.input" Name="input">
       <Property LongName="UDPSocket_2.input.readerType" Type="1">0</Property>
       <Property LongName="UDPSocket_2.input.subsampling" Type="1">1</Property>
@@ -376,10 +363,10 @@
   <Connection Output="SimulinkDSpaceDeserialize_1.output0" Input="Simulink_feedback.input_0"/>
   <Connection Output="SimulinkDSpaceDeserialize_1.output1" Input="Simulink_feedback.input_1"/>
   <Connection Output="UDP_from_Simulink.output" Input="SimulinkDSpaceDeserialize_1.input"/>
-  <Connection Output="LQR_forRTMaps10ms_1.Outport" Input="SimulinkDSpaceSerialize_1.input0"/>
+  <Connection Output="LQR_forRTMap_50ms.Outport" Input="SimulinkDSpaceSerialize_1.input0"/>
   <Connection Output="SimulinkDSpaceSerialize_1.outputStream8" Input="UDPSocket_2.input"/>
   <Connection Input="RecFile_1.LQR_forRTMaps10ms_1.Outport.input" Output="LQR_forRTMaps10ms_1.Outport">
-    <Record Method="mfile" neverskipping="false" useTimestamp="false"/>
+    <Record Method="numeric_binary" neverskipping="false" useTimestamp="false"/>
   </Connection>
   <RTBoardView ID="JavaStudio1.0">
     <ConnectionShape InstanceName="Devectorizer_1.iVector" color="0"/>

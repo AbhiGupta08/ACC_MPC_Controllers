@@ -1,0 +1,29 @@
+%implements s0_b0_uku1p_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(0)>\
+/* Outport: '<Root>/unit_delay_out' incorporates:
+ *  UnitDelay: '<Root>/Unit Delay'
+ */
+unit_delay_4RTMaps_Y.unit_delay_out = unit_delay_4RTMaps_DW.UnitDelay_DSTATE;
+/* Update for UnitDelay: '<Root>/Unit Delay' incorporates:
+ *  Inport: '<Root>/unit_delay_in'
+ */
+unit_delay_4RTMaps_DW.UnitDelay_DSTATE = unit_delay_4RTMaps_U.unit_delay_in;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

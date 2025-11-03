@@ -1,0 +1,44 @@
+%implements s0_b0_uku1p_ModelClassDefinition "C"
+%function ModelClassDefinition(block) Output
+%openfile tmp
+class unit_delay_4RTMaps final 
+{
+  public:
+    %<SLibFillInPublicClassMembers()>
+    /* Tunable parameters */
+    static P_unit_delay_4RTMaps_T unit_delay_4RTMaps_P;
+        /* Root inports set method */
+void setExternalInputs(const ExtU_unit_delay_4RTMaps_T *pExtU_unit_delay_4RTMaps_T)
+    {
+        unit_delay_4RTMaps_U = *pExtU_unit_delay_4RTMaps_T;
+    }
+        /* Root outports get method */
+const ExtY_unit_delay_4RTMaps_T &getExternalOutputs() const
+    {
+        return unit_delay_4RTMaps_Y;
+    }
+        /* Initial conditions function */
+void initialize();
+        /* model step function */
+%<FcnStaticOnEmptyOutputUpdateMethod()>void step()%<AddConstToStepIfNeccessary("Outputs")>;
+        /* model terminate function */
+%<FcnStaticOnEmptyTermMethod()>void terminate()%<AddConstToTermIfNecessary("terminate")>;
+        /* Constructor */
+unit_delay_4RTMaps();
+        /* Destructor */
+~unit_delay_4RTMaps();
+  protected:
+    %<SLibFillInProtectedClassMembers()>
+  private:
+    /* External inputs */
+    ExtU_unit_delay_4RTMaps_T unit_delay_4RTMaps_U;
+    /* External outputs */
+    ExtY_unit_delay_4RTMaps_T unit_delay_4RTMaps_Y;
+    /* Block states */
+    DW_unit_delay_4RTMaps_T unit_delay_4RTMaps_DW;
+    %<SLibFillInPrivateClassMembers()>
+    %<SLibFillInLastPrivateClassMembers()>
+};
+%closefile tmp
+%return tmp
+%endfunction

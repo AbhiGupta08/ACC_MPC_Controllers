@@ -1,0 +1,40 @@
+%implements s1_b0_nev1p_ModelClassDefinition "C"
+%function ModelClassDefinition(block) Output
+%openfile tmp
+class AccelSmoothingAndSaturation_4RTMaps final 
+{
+  public:
+    %<SLibFillInPublicClassMembers()>
+        /* Root inports set method */
+void setExternalInputs(const ExtU_AccelSmoothingAndSaturat_T *pExtU_AccelSmoothingAndSaturat_T)
+    {
+        AccelSmoothingAndSaturation_4_U = *pExtU_AccelSmoothingAndSaturat_T;
+    }
+        /* Root outports get method */
+const ExtY_AccelSmoothingAndSaturat_T &getExternalOutputs() const
+    {
+        return AccelSmoothingAndSaturation_4_Y;
+    }
+        /* Initial conditions function */
+void initialize();
+        /* model step function */
+%<FcnStaticOnEmptyOutputUpdateMethod()>void step()%<AddConstToStepIfNeccessary("Outputs")>;
+        /* model terminate function */
+%<FcnStaticOnEmptyTermMethod()>void terminate()%<AddConstToTermIfNecessary("terminate")>;
+        /* Constructor */
+AccelSmoothingAndSaturation_4RTMaps();
+        /* Destructor */
+~AccelSmoothingAndSaturation_4RTMaps();
+  protected:
+    %<SLibFillInProtectedClassMembers()>
+  private:
+    /* External inputs */
+    ExtU_AccelSmoothingAndSaturat_T AccelSmoothingAndSaturation_4_U;
+    /* External outputs */
+    ExtY_AccelSmoothingAndSaturat_T AccelSmoothingAndSaturation_4_Y;
+    %<SLibFillInPrivateClassMembers()>
+    %<SLibFillInLastPrivateClassMembers()>
+};
+%closefile tmp
+%return tmp
+%endfunction
