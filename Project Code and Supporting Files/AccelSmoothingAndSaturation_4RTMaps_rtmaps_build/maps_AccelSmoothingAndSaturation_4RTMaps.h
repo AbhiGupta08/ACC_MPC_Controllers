@@ -285,7 +285,7 @@ struct ComponentOutputInfo
 
 #define ComponentClass                 maps_AccelSmoothingAndSaturation_4RTMaps
 #define ComponentName                  "AccelSmoothingAndSaturation_4RTMaps"
-#define ComponentVersion               "1.1"
+#define ComponentVersion               "1.4"
 
 class ComponentClass : public MAPSComponent
 {

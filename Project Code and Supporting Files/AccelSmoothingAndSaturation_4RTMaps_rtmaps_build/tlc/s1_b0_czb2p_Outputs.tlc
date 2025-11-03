@@ -1,4 +1,4 @@
-%implements s1_b0_nev1p_Outputs "C"
+%implements s1_b0_czb2p_Outputs "C"
 
 %function Outputs(block, system) Output
 %assign cfgTxt = ""
@@ -18,7 +18,7 @@ real_T rtb_u_cmd;
 %<SLibCG_TrackEI(2)>\
 %<SLibCG_TrackEI(1)>\
 %<SLibCG_TrackEI(0)>\
-/* {S!d8}MATLAB Function: '<Root>/acceleration smoothing and saturation' incorporates:
+/* {S!d2}MATLAB Function: '<Root>/acceleration smoothing and saturation' incorporates:
  *  Inport: '<Root>/AccelMax'
  *  Inport: '<Root>/AccelMin'
  *  Inport: '<Root>/DriverSetSpeed'
@@ -37,9 +37,9 @@ if ((AccelSmoothingAndSaturation_4_U.HostVelocity <= 0.001) && (rtb_u_cmd < 0.0)
     rtb_u_cmd = std::exp(-AccelSmoothingAndSaturation_4_U.TimeStep / 0.5);
     rtb_u_cmd = (1.0 - rtb_u_cmd) * 0.0 + rtb_u_cmd * AccelSmoothingAndSaturation_4_U.u_k_minus_1;
 }
-/* {E!d8}End of MATLAB Function: '<Root>/acceleration smoothing and saturation' */
+/* {E!d2}End of MATLAB Function: '<Root>/acceleration smoothing and saturation' */
 
-/* {S!d10}Outport: '<Root>/u_cmd' */
+/* {S!d4}Outport: '<Root>/u_cmd' */
 AccelSmoothingAndSaturation_4_Y.u_cmd = rtb_u_cmd;
 %<SLibInsertSolverResetCode()>\
 %closefile cfgTxt

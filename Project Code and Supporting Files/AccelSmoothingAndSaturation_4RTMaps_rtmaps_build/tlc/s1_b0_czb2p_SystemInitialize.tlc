@@ -1,4 +1,4 @@
-%implements s1_b0_nev1p_SystemInitialize "C"
+%implements s1_b0_czb2p_SystemInitialize "C"
 
 %function SystemInitialize(block, system) Output
 %assign cfgTxt = ""
