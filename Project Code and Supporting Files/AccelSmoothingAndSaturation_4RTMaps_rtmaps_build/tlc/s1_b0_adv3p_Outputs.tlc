@@ -1,4 +1,4 @@
-%implements s1_b0_czb2p_Outputs "C"
+%implements s1_b0_adv3p_Outputs "C"
 
 %function Outputs(block, system) Output
 %assign cfgTxt = ""
@@ -9,7 +9,6 @@
 real_T rtb_u_cmd;
 %closefile localVarDecl
 %<SLibCG_TrackEO(0)>\
-%<SLibCG_TrackEI(8)>\
 %<SLibCG_TrackEI(7)>\
 %<SLibCG_TrackEI(6)>\
 %<SLibCG_TrackEI(5)>\
@@ -27,15 +26,17 @@ real_T rtb_u_cmd;
  *  Inport: '<Root>/TimeStep'
  *  Inport: '<Root>/rho'
  *  Inport: '<Root>/u_LQR'
- *  Inport: '<Root>/u_k_minus_1'
  */
 rtb_u_cmd = AccelSmoothingAndSaturation_4_U.JerkMax * AccelSmoothingAndSaturation_4_U.TimeStep;
-rtb_u_cmd = std::fmin(std::fmax(std::fmin(std::fmax((AccelSmoothingAndSaturation_4_U.rho * AccelSmoothingAndSaturation_4_U.u_k_minus_1 + AccelSmoothingAndSaturation_4_U.u_LQR) / (AccelSmoothingAndSaturation_4_U.rho + 1.0), AccelSmoothingAndSaturation_4_U.u_k_minus_1 - rtb_u_cmd), rtb_u_cmd + AccelSmoothingAndSaturation_4_U.u_k_minus_1), AccelSmoothingAndSaturation_4_U.AccelMin), AccelSmoothingAndSaturation_4_U.AccelMax);
+rtb_u_cmd = std::fmin(std::fmax(std::fmin(std::fmax((AccelSmoothingAndSaturation_4_U.rho * AccelSmoothingAndSaturation__DW.u_k_minus_1 + AccelSmoothingAndSaturation_4_U.u_LQR) / (AccelSmoothingAndSaturation_4_U.rho + 1.0), AccelSmoothingAndSaturation__DW.u_k_minus_1 - rtb_u_cmd), rtb_u_cmd + AccelSmoothingAndSaturation__DW.u_k_minus_1), AccelSmoothingAndSaturation_4_U.AccelMin), AccelSmoothingAndSaturation_4_U.AccelMax);
+AccelSmoothingAndSaturation__DW.u_k_minus_1 = rtb_u_cmd;
 if ((AccelSmoothingAndSaturation_4_U.HostVelocity <= 0.001) && (rtb_u_cmd < 0.0)) {
     rtb_u_cmd = 0.0;
+    AccelSmoothingAndSaturation__DW.u_k_minus_1 = 0.0;
 } else if ((AccelSmoothingAndSaturation_4_U.HostVelocity >= AccelSmoothingAndSaturation_4_U.DriverSetSpeed) && (rtb_u_cmd > 0.0)) {
     rtb_u_cmd = std::exp(-AccelSmoothingAndSaturation_4_U.TimeStep / 0.5);
-    rtb_u_cmd = (1.0 - rtb_u_cmd) * 0.0 + rtb_u_cmd * AccelSmoothingAndSaturation_4_U.u_k_minus_1;
+    rtb_u_cmd = (1.0 - rtb_u_cmd) * 0.0 + rtb_u_cmd * AccelSmoothingAndSaturation__DW.u_k_minus_1;
+    AccelSmoothingAndSaturation__DW.u_k_minus_1 = rtb_u_cmd;
 }
 /* {E!d2}End of MATLAB Function: '<Root>/acceleration smoothing and saturation' */
 

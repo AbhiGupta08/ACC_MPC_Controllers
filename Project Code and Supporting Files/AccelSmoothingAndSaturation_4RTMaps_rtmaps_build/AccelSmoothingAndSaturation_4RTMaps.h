@@ -7,9 +7,9 @@
  *
  * Code generation for model "AccelSmoothingAndSaturation_4RTMaps".
  *
- * Model version              : 1.4
+ * Model version              : 1.7
  * Simulink Coder version : 24.1 (R2024a) 19-Nov-2023
- * C++ source code generated on : Mon Nov  3 17:53:28 2025
+ * C++ source code generated on : Tue Nov  4 13:49:49 2025
  *
  * Target selection: rtmaps.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -37,6 +37,11 @@
 
 #define AccelSmoothingAndSaturation_4RTMaps_M (AccelSmoothingAndSaturation__M)
 
+/* Block states (default storage) for system '<Root>' */
+struct DW_AccelSmoothingAndSaturatio_T {
+  real_T u_k_minus_1;       /* '<Root>/acceleration smoothing and saturation' */
+};
+
 /* External inputs (root inport signals with default storage) */
 struct ExtU_AccelSmoothingAndSaturat_T {
   real_T rho;                          /* '<Root>/rho' */
@@ -47,7 +52,6 @@ struct ExtU_AccelSmoothingAndSaturat_T {
   real_T DriverSetSpeed;               /* '<Root>/DriverSetSpeed' */
   real_T u_LQR;                        /* '<Root>/u_LQR' */
   real_T HostVelocity;                 /* '<Root>/HostVelocity' */
-  real_T u_k_minus_1;                  /* '<Root>/u_k_minus_1' */
 };
 
 /* External outputs (root outports fed by signals with default storage) */
@@ -119,6 +123,9 @@ class AccelSmoothingAndSaturation_4RTMaps final
 
   /* External outputs */
   ExtY_AccelSmoothingAndSaturat_T AccelSmoothingAndSaturation_4_Y;
+
+  /* Block states */
+  DW_AccelSmoothingAndSaturatio_T AccelSmoothingAndSaturation__DW;
 
   /* Real-Time Model */
   RT_MODEL_AccelSmoothingAndSat_T AccelSmoothingAndSaturation__M;

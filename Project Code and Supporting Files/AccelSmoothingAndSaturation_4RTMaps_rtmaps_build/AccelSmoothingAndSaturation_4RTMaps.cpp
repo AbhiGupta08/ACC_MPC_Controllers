@@ -7,9 +7,9 @@
  *
  * Code generation for model "AccelSmoothingAndSaturation_4RTMaps".
  *
- * Model version              : 1.4
+ * Model version              : 1.7
  * Simulink Coder version : 24.1 (R2024a) 19-Nov-2023
- * C++ source code generated on : Mon Nov  3 17:53:28 2025
+ * C++ source code generated on : Tue Nov  4 13:49:49 2025
  *
  * Target selection: rtmaps.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -36,28 +36,30 @@ void AccelSmoothingAndSaturation_4RTMaps::step()
    *  Inport: '<Root>/TimeStep'
    *  Inport: '<Root>/rho'
    *  Inport: '<Root>/u_LQR'
-   *  Inport: '<Root>/u_k_minus_1'
    */
   rtb_u_cmd = AccelSmoothingAndSaturation_4_U.JerkMax *
     AccelSmoothingAndSaturation_4_U.TimeStep;
   rtb_u_cmd = std::fmin(std::fmax(std::fmin(std::fmax
     ((AccelSmoothingAndSaturation_4_U.rho *
-      AccelSmoothingAndSaturation_4_U.u_k_minus_1 +
+      AccelSmoothingAndSaturation__DW.u_k_minus_1 +
       AccelSmoothingAndSaturation_4_U.u_LQR) /
      (AccelSmoothingAndSaturation_4_U.rho + 1.0),
-     AccelSmoothingAndSaturation_4_U.u_k_minus_1 - rtb_u_cmd), rtb_u_cmd +
-    AccelSmoothingAndSaturation_4_U.u_k_minus_1),
+     AccelSmoothingAndSaturation__DW.u_k_minus_1 - rtb_u_cmd), rtb_u_cmd +
+    AccelSmoothingAndSaturation__DW.u_k_minus_1),
     AccelSmoothingAndSaturation_4_U.AccelMin),
                         AccelSmoothingAndSaturation_4_U.AccelMax);
+  AccelSmoothingAndSaturation__DW.u_k_minus_1 = rtb_u_cmd;
   if ((AccelSmoothingAndSaturation_4_U.HostVelocity <= 0.001) && (rtb_u_cmd <
        0.0)) {
     rtb_u_cmd = 0.0;
+    AccelSmoothingAndSaturation__DW.u_k_minus_1 = 0.0;
   } else if ((AccelSmoothingAndSaturation_4_U.HostVelocity >=
               AccelSmoothingAndSaturation_4_U.DriverSetSpeed) && (rtb_u_cmd >
               0.0)) {
     rtb_u_cmd = std::exp(-AccelSmoothingAndSaturation_4_U.TimeStep / 0.5);
     rtb_u_cmd = (1.0 - rtb_u_cmd) * 0.0 + rtb_u_cmd *
-      AccelSmoothingAndSaturation_4_U.u_k_minus_1;
+      AccelSmoothingAndSaturation__DW.u_k_minus_1;
+    AccelSmoothingAndSaturation__DW.u_k_minus_1 = rtb_u_cmd;
   }
 
   /* End of MATLAB Function: '<Root>/acceleration smoothing and saturation' */
@@ -82,6 +84,7 @@ void AccelSmoothingAndSaturation_4RTMaps::terminate()
 AccelSmoothingAndSaturation_4RTMaps::AccelSmoothingAndSaturation_4RTMaps() :
   AccelSmoothingAndSaturation_4_U(),
   AccelSmoothingAndSaturation_4_Y(),
+  AccelSmoothingAndSaturation__DW(),
   AccelSmoothingAndSaturation__M()
 {
   /* Currently there is no constructor body generated.*/

@@ -712,26 +712,6 @@ void ComponentClass::computeSkModelInputs()
   }
 
   );
-  m_skModelInputs.emplace_back(
-    "u_k_minus_1",
-    8,
-    1,
-    SkTypeId::t_double,
-    "real_T",
-    static_cast<int>(sizeof( real_T )),
-    &AccelSmoothingAndSaturation_4_U.u_k_minus_1,
-    [] (const TypeID_Value mapsTypeId, const void* mapsInPtr, void *data, const
-        size_t elementCount)
-  {
-    copyData(
-             mapsTypeId,
-             mapsInPtr,
-             static_cast<real_T*>(data),
-             elementCount
-             );
-  }
-
-  );
 }
 void ComponentClass::computeSkModelOutputs()
 {

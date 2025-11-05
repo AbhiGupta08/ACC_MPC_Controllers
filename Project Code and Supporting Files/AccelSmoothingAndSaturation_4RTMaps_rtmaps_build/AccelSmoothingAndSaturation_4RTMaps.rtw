@@ -6,8 +6,8 @@ CompiledModel {
   ModelReferenceTargetType "NONE"
   Version		  "24.1 (R2024a) 19-Nov-2023"
   SimulinkVersion	  "24.1"
-  ModelVersion		  "1.4"
-  GeneratedOn		  "Mon Nov  3 17:53:27 2025"
+  ModelVersion		  "1.7"
+  GeneratedOn		  "Tue Nov  4 13:49:48 2025"
   HasSimStructVars	  0
   HasVariants		  0
   PreserveExternInFcnDecls 1
@@ -588,7 +588,7 @@ CompiledModel {
     tlcTargetType	    "RT"
     RelativeBuildDir	    "AccelSmoothingAndSaturation_4RTMaps_rtmaps_build"
   }
-  RTWContext		  [-1201676800, 413]
+  RTWContext		  [-555167104, 538]
   RTWCGIR		  1
   TLCBlkFcnInCGIR	  1
   SLCI			  off
@@ -609,7 +609,7 @@ CompiledModel {
     FinalStateName	    ""
     CompiledLoggingSaveFormat "Dataset"
   }
-  NumModelInputs	  9
+  NumModelInputs	  8
   NumModelOutputs	  1
   NumNonVirtBlocksInModel 3
   DirectFeedthrough	  yes
@@ -1066,13 +1066,13 @@ CompiledModel {
       Type		      root
       SubsystemBlockIndex     [-1, -1]
       NVOwnerSysIdx	      1
-      NumBlocks		      11
-      NumInportBlocks	      9
-      InportBlocks	      [0:8]
+      NumBlocks		      10
+      NumInportBlocks	      8
+      InportBlocks	      [0:7]
       NumOutportBlocks	      1
-      OutportBlocks	      [9]
+      OutportBlocks	      [8]
       NumSubsystemBlocks      1
-      SubsystemBlocks	      [10]
+      SubsystemBlocks	      [9]
       NumChildSubsystems      1
       ChildSubsystems	      [1]
       Block {
@@ -1124,12 +1124,6 @@ CompiledModel {
 	Type			Inport
       }
       Block {
-	Name			"<Root>/u_k_minus_1"
-	SLName			"u_k_minus_1"
-	SID			"11"
-	Type			Inport
-      }
-      Block {
 	Name			"<Root>/u_cmd"
 	SLName			"u_cmd"
 	SID			"12"
@@ -1140,13 +1134,18 @@ CompiledModel {
 	SLName			"acceleration smoothing and saturation"
 	SID			"1"
 	Type			Stateflow
+	NumDiscStates		0
+	DWork {
+	  _idx			  0
+	}
+	NumDWorks		1
       }
     }
     Subsystem {
       Name		      "<Root>/acceleration smoothing and saturation"
       SLName		      "acceleration smoothing and saturation"
       Type		      atomic
-      SubsystemBlockIndex     [0, 10]
+      SubsystemBlockIndex     [0, 9]
       NVOwnerSysIdx	      0
     }
     NumSubsystems	    2
@@ -1198,7 +1197,7 @@ CompiledModel {
       IsSpecifiedAsNewStorageClass 0
       PassByRef		      NEVER
     }
-    NumExternalInputs	    9
+    NumExternalInputs	    8
     StructAlignment	    -1
     NumAperiodicPartitions  0
     ExternalInput {
@@ -1329,22 +1328,6 @@ CompiledModel {
       OriginalPortIndex	      7
       IsMessage		      0
     }
-    ExternalInput {
-      ExternalInputIdx	      8
-      RecordIdx		      [8]
-      ArgSrc		      U8
-      BlockName		      "<Root>/u_k_minus_1"
-      GrSrc		      [0, 8]
-      Identifier	      "u_k_minus_1"
-      TID		      0
-      UnitIdx		      0
-      RequiresGlobalAccess    no
-      VarGroupIdx	      [0,8]
-      IsEliminated	      false
-      DirectFeedThrough	      yes
-      OriginalPortIndex	      8
-      IsMessage		      0
-    }
   }
   ExternalOutputs {
     ExternalOutputDefaults {
@@ -1381,7 +1364,7 @@ CompiledModel {
       ArgSrc		      Y0
       Block		      [1,1]
       BlockName		      "<Root>/u_cmd"
-      GrSrc		      [0, 9]
+      GrSrc		      [0, 8]
       Identifier	      ""
       SigLabel		      "u_cmd"
       UnitIdx		      0
@@ -1656,7 +1639,7 @@ CompiledModel {
       LogicalSrc	      B0
       DrivesRootOutport	      yes
       SigDeclSysIdx	      1
-      GrSrc		      [0, 10, 0, -1]
+      GrSrc		      [0, 9, 0, -1]
       SigSrc		      [0, 0, 0, 1]
       SigLabel		      "u_cmd"
       SysNum		      1
@@ -1739,8 +1722,19 @@ CompiledModel {
       IsSpecifiedAsNewStorageClass 0
       IgnoreThisDWorkForOP    0
     }
-    NumDWorks		    0
-    NumNonLocalDWorks	    0
+    NumDWorks		    1
+    NumNonLocalDWorks	    1
+    DWork {
+      SysCsIdx		      [0, 0]
+      VarGroupIdx	      [2, 0]
+      LogStateName	      "u_k_minus_1"
+      Name		      "DWORK1"
+      LogicalSrc	      D0
+      GrSrc		      [0, 9]
+      SigSrc		      [0, 0, 0, 0]
+      hierInfoIdx	      -1
+      flatElemIdx	      0
+    }
     NumSFcnWrapperDWorks    0
   }
   SimStateDisallowedBlocks {
@@ -1846,7 +1840,7 @@ CompiledModel {
     ArgDefIdx		    -1
     MemoryMapIdx	    [-1, -1, -1]
     OriginalDataTypeIdx	    0
-    CGTypeIdx		    21
+    CGTypeIdx		    22
     Tunable		    on
     OrigIdentifier	    ""
     StorageClass	    Auto
@@ -2012,7 +2006,7 @@ CompiledModel {
       MemoryMapIdx	      [-1, -1, -1]
       HasObject		      0
       OriginalDataTypeIdx     0
-      CGTypeIdx		      21
+      CGTypeIdx		      22
       WorkspaceVarName	      ""
       IsPseudoWorkspaceVar    no
       Tunable		      yes
@@ -2705,7 +2699,7 @@ CompiledModel {
   }
   CanonicalPrmArgDefDefaults {
     OriginalDataTypeIdx	    0
-    CGTypeIdx		    21
+    CGTypeIdx		    22
     IsUsed		    yes
     DeclareAsPointer	    no
   }
@@ -2745,7 +2739,7 @@ CompiledModel {
     CallSites		    Matrix(1,4)
 [[1, -1, 1, 0];]
     GraphCallSites	    Matrix(1,2)
-[[0, 10];]
+[[0, 9];]
     DescInCallSite	    0
     NumChildSystems	    0
     Interface {
@@ -2815,20 +2809,27 @@ CompiledModel {
       BlockIdx		      [0, 0, 0]
       RecordIdx		      [0, 0]
       SL_BlockIdx	      0
-      GrSrc		      [0, 10]
+      GrSrc		      [0, 9]
       ExprCommentInfo {
       }
       ExprCommentSrcIdx {
       }
-      Tag		      "Stateflow S-Function 4 AccelSmoothingAndSaturation_4RTMaps swYheyS6Kxo9Yvtxy5vPJm"
+      Tag		      "Stateflow S-Function 4 AccelSmoothingAndSaturation_4RTMaps sd4C6QONp01xWBhy4Zi3SaE"
       Name		      "<S1>/ SFunction "
       Identifier	      "SFunction"
       TID		      0
       PID		      -1
       firstEntryOfTsMapIsGCD  yes
       TimeKeepingTID	      0
+      NumDWork		      1
+      DWork {
+	RecordType		"BlockDWork"
+	RecordIdx		[0, 0, 0]
+	FirstRootIdx		0
+	Name			"DWORK1"
+      }
       RollRegions	      [0]
-      NumDataInputPorts	      9
+      NumDataInputPorts	      8
       DataInputPort {
 	SignalSrc		[U0]
 	SignalRegion		[0@1]
@@ -2885,13 +2886,6 @@ CompiledModel {
 	CGTypeIdx		0
 	RollRegions		[0]
       }
-      DataInputPort {
-	SignalSrc		[U8]
-	SignalRegion		[0@1]
-	RecordIdx		[0, 0, 8]
-	CGTypeIdx		0
-	RollRegions		[0]
-      }
       NumDataOutputPorts      2
       DataOutputPort {
 	RecordIdx		[0, 0, 0]
@@ -2903,9 +2897,9 @@ CompiledModel {
 	SignalSrc		[L0]
       }
       Connections {
-	InputPortContiguous	[yes, yes, yes, yes, yes, yes, yes, yes, yes]
-	DirectSrcConn		[yes, yes, yes, yes, yes, yes, yes, yes, yes]
-	UnbranchedSrcConn	[yes, yes, yes, yes, yes, yes, yes, yes, yes]
+	InputPortContiguous	[yes, yes, yes, yes, yes, yes, yes, yes]
+	DirectSrcConn		[yes, yes, yes, yes, yes, yes, yes, yes]
+	UnbranchedSrcConn	[yes, yes, yes, yes, yes, yes, yes, yes]
 	DirectDstConn		[no, yes]
 	DataOutputPort {
 	  NumConnPoints		  0
@@ -2925,15 +2919,15 @@ CompiledModel {
 	ExplicitFCSSCtrl	yes
 	Asynchronous		no
 	FunctionLevel		2
-	DirectFeedthrough	[yes, yes, yes, yes, yes, yes, yes, yes, yes]
-	UsingUPtrs		[no@9]
-	InputContiguous		[yes@9]
+	DirectFeedthrough	[yes, yes, yes, yes, yes, yes, yes, yes]
+	UsingUPtrs		[no@8]
+	InputContiguous		[yes@8]
 	DataStoreSource		[]
 	DataStoreGlobalDSM	[]
 	GlobalDataStoreSource	[]
 	SampleTimesToSet	Matrix(1,2)
 [[0, 0];]
-	DynamicallySizedVectors	["U0", "U1", "U2", "U3", "U4", "U5", "U6", "U7", "U8", "Y1", "NonsampledZCs"]
+	DynamicallySizedVectors	["U0", "U1", "U2", "U3", "U4", "U5", "U6", "U7", "Y1", "NonsampledZCs"]
 	SFcnmdlRoutines		Vector(13)
 ["mdlInitializeSizes", "mdlInitializeSampleTimes", "mdlInitializeConditions", "mdlStart", "mdlSetupRuntimeResources", "mdlCleanupRuntimeResources", "mdlOutputs", "mdlUpdate", "mdlRTWCG", "mdlTerminate", "mdlEnable", "mdlDisable", "mdlRTW"]
 	AliasDataTypeCompliant	0
@@ -3014,6 +3008,7 @@ CompiledModel {
     SL_SystemIdx	    1
     ExternalInputVarGroupIndex [0]
     ExternalOutputVarGroupIndex	[1]
+    DWorkVarGroupIndex	    [2]
     HStructDeclSystemIdx    1
     ReusedParentSystemIdx   1
     NonInlinedParentSystemIdx 1
@@ -3034,8 +3029,10 @@ CompiledModel {
       ParameterArgDef {
       }
       DWorkArgDef {
+	NumFlatFields		1
       }
       LocalSDWorkArgDef {
+	FirstLocation		1
       }
       ContStatesArgDef {
       }
@@ -3087,7 +3084,7 @@ CompiledModel {
       BlockIdx		      [1, 0, 0]
       RecordIdx		      [1, 0]
       SL_BlockIdx	      0
-      GrSrc		      [0, 10]
+      GrSrc		      [0, 9]
       ExprCommentInfo {
       }
       ExprCommentSrcIdx {
@@ -3120,7 +3117,7 @@ CompiledModel {
       BlockIdx		      [1, 1, 1]
       RecordIdx		      [1, 1]
       SL_BlockIdx	      1
-      GrSrc		      [0, 9]
+      GrSrc		      [0, 8]
       ExprCommentInfo {
       }
       ExprCommentSrcIdx {
@@ -3162,7 +3159,7 @@ CompiledModel {
       firstEntryOfTsMapIsGCD  yes
       TimeKeepingTID	      0
       NumDataOutputPorts      0
-      TLCFileName	      "s1_b0_czb2p"
+      TLCFileName	      "s1_b0_adv3p"
       OpaqueBlockMethode {
 	HasSystemInitialize	1
 	HasOutputs		1
@@ -3177,7 +3174,7 @@ CompiledModel {
     NumUniqueCharts	    0
   }
   BlockParamChecksum	  ["145875782U", "4191468933U", "1334261841U", "1938257353U"]
-  ModelChecksum		  ["2382633847U", "3870947991U", "3915282262U", "535593922U"]
+  ModelChecksum		  ["155879022U", "1533399102U", "206252524U", "2540707136U"]
   CGTypes {
     CGTypeDefaults {
       SLTypeIdx		      -1
@@ -3186,7 +3183,7 @@ CompiledModel {
       TypeName		      "-1"
       SymbolicVectorDims      "-1"
     }
-    NumCGTypes		    22
+    NumCGTypes		    23
     DeclareUsedMultiWordBits 0
     IndexType		    6
     CGType {
@@ -3269,6 +3266,9 @@ CompiledModel {
       Name		      "ExtY_AccelSmoothingAndSaturat_T"
     }
     CGType {
+      Name		      "DW_AccelSmoothingAndSaturatio_T"
+    }
+    CGType {
     }
     IncludeSymbolicWidth    0
   }
@@ -3336,20 +3336,20 @@ CompiledModel {
     RTWCGModule {
       RateGrouping	      0
       PeriodicRateGrouping    0
-      TLCFileName	      "s1_b0_czb2p"
+      TLCFileName	      "s1_b0_adv3p"
       RTWFcnConst {
 	HasInstanceSetup	"no"
 	baseTidOfTasks		"[0]"
 	SystemInitialize_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_czb2p_SystemInitialize"
+	  TLCFileName		  "s1_b0_adv3p_SystemInitialize"
 	  StackSize		  0
 	}
 	Outputs_Function {
 	  HasTidArg		  0
 	  HasCpiArg		  0
-	  TLCFileName		  "s1_b0_czb2p_Outputs"
+	  TLCFileName		  "s1_b0_adv3p_Outputs"
 	  StackSize		  8
 	}
       }
@@ -3382,7 +3382,7 @@ CompiledModel {
   }
   RTWCGStrings		  []
   VarGroups {
-    NumVarGroups	    2
+    NumVarGroups	    3
     VarGroupDefaults {
       IndexOfLastNonEmptyMember	-1
       IsPointer		      0
@@ -3407,11 +3407,11 @@ CompiledModel {
       InstanceIdx	      -1
       RequiresRt_unused	      0
       CGTypeIdx		      19
-      NumVarGroupElements     9
+      NumVarGroupElements     8
       VarGroupContains	      "SignalElementOnly"
-      VarGroupElements	      [U0, U1, U2, U3, U4, U5, U6, U7, U8]
-      NumVariantConditions    9
-      VariantConditions	      ["", "", "", "", "", "", "", "", ""]
+      VarGroupElements	      [U0, U1, U2, U3, U4, U5, U6, U7]
+      NumVariantConditions    8
+      VariantConditions	      ["", "", "", "", "", "", "", ""]
       VarGroupCondition	      ""
     }
     VarGroup {
@@ -3424,6 +3424,21 @@ CompiledModel {
       NumVarGroupElements     1
       VarGroupContains	      "SignalElementOnly"
       VarGroupElements	      [Y0]
+      NumVariantConditions    1
+      VariantConditions	      [""]
+      VarGroupCondition	      ""
+    }
+    VarGroup {
+      Name		      "AccelSmoothingAndSaturation__DW"
+      Category		      "DWork"
+      LocalName		      "localDW"
+      SysIdx		      1
+      InstanceIdx	      -1
+      RequiresRt_unused	      0
+      CGTypeIdx		      21
+      NumVarGroupElements     1
+      VarGroupContains	      "SignalElementOnly"
+      VarGroupElements	      [W0]
       NumVariantConditions    1
       VariantConditions	      [""]
       VarGroupCondition	      ""

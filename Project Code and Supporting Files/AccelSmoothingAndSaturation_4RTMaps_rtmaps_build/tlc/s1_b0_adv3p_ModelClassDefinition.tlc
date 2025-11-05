@@ -1,4 +1,4 @@
-%implements s1_b0_czb2p_ModelClassDefinition "C"
+%implements s1_b0_adv3p_ModelClassDefinition "C"
 %function ModelClassDefinition(block) Output
 %openfile tmp
 class AccelSmoothingAndSaturation_4RTMaps final 
@@ -32,6 +32,8 @@ AccelSmoothingAndSaturation_4RTMaps();
     ExtU_AccelSmoothingAndSaturat_T AccelSmoothingAndSaturation_4_U;
     /* External outputs */
     ExtY_AccelSmoothingAndSaturat_T AccelSmoothingAndSaturation_4_Y;
+    /* Block states */
+    DW_AccelSmoothingAndSaturatio_T AccelSmoothingAndSaturation__DW;
     %<SLibFillInPrivateClassMembers()>
     %<SLibFillInLastPrivateClassMembers()>
 };

@@ -7,9 +7,9 @@
  *
  * Code generation for model "AccelSmoothingAndSaturation_4RTMaps".
  *
- * Model version              : 1.4
+ * Model version              : 1.7
  * Simulink Coder version : 24.1 (R2024a) 19-Nov-2023
- * C++ source code generated on : Mon Nov  3 17:53:28 2025
+ * C++ source code generated on : Tue Nov  4 13:49:49 2025
  *
  * Target selection: rtmaps.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

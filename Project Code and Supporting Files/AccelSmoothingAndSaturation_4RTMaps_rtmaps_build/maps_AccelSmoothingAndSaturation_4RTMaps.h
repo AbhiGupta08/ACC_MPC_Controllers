@@ -24,7 +24,7 @@
 #include <maps_macros.hpp>
 #include <maps/input_reader/maps_input_reader.hpp>
 #include "AccelSmoothingAndSaturation_4RTMaps.h"
-#define G_MODEL_INPUT_COUNT            9
+#define G_MODEL_INPUT_COUNT            8
 #define G_MODEL_OUTPUT_COUNT           1
 #define G_MODEL_PARAM_COUNT            0
 
@@ -285,7 +285,7 @@ struct ComponentOutputInfo
 
 #define ComponentClass                 maps_AccelSmoothingAndSaturation_4RTMaps
 #define ComponentName                  "AccelSmoothingAndSaturation_4RTMaps"
-#define ComponentVersion               "1.4"
+#define ComponentVersion               "1.7"
 
 class ComponentClass : public MAPSComponent
 {
