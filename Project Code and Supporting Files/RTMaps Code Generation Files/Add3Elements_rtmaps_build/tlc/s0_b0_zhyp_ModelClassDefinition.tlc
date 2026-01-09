@@ -1,0 +1,40 @@
+%implements s0_b0_zhyp_ModelClassDefinition "C"
+%function ModelClassDefinition(block) Output
+%openfile tmp
+class Add3Elements final 
+{
+  public:
+    %<SLibFillInPublicClassMembers()>
+        /* Root inports set method */
+void setExternalInputs(const ExtU_Add3Elements_T *pExtU_Add3Elements_T)
+    {
+        Add3Elements_U = *pExtU_Add3Elements_T;
+    }
+        /* Root outports get method */
+const ExtY_Add3Elements_T &getExternalOutputs() const
+    {
+        return Add3Elements_Y;
+    }
+        /* Initial conditions function */
+void initialize();
+        /* model step function */
+%<FcnStaticOnEmptyOutputUpdateMethod()>void step()%<AddConstToStepIfNeccessary("Outputs")>;
+        /* model terminate function */
+%<FcnStaticOnEmptyTermMethod()>void terminate()%<AddConstToTermIfNecessary("terminate")>;
+        /* Constructor */
+Add3Elements();
+        /* Destructor */
+~Add3Elements();
+  protected:
+    %<SLibFillInProtectedClassMembers()>
+  private:
+    /* External inputs */
+    ExtU_Add3Elements_T Add3Elements_U;
+    /* External outputs */
+    ExtY_Add3Elements_T Add3Elements_Y;
+    %<SLibFillInPrivateClassMembers()>
+    %<SLibFillInLastPrivateClassMembers()>
+};
+%closefile tmp
+%return tmp
+%endfunction

@@ -1,0 +1,46 @@
+%implements s1_b0_p8kp_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T set_spd_err;
+%closefile localVarDecl
+%<SLibCG_TrackEO(1)>\
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(2)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+/* {S!d6}MATLAB Function: '<Root>/Set Speed Match Feedforward' incorporates:
+ *  Inport: '<Root>/Host Velocity (m//s)'
+ *  Inport: '<Root>/Set Speed Target (m//s)'
+ */
+set_spd_err = Set_Spd_Fdfwd_Deccel_U.SetSpeedTargetms - Set_Spd_Fdfwd_Deccel_U.HostVelocityms;
+if (set_spd_err < 0.0) {
+    /* {S!d2}Outport: '<Root>/Set Speed FeedForward Deccel (m//s2)' incorporates:
+ *  Inport: '<Root>/Preview Time for Deccel (s)'
+ */
+    Set_Spd_Fdfwd_Deccel_Y.SetSpeedFeedForwardDeccelms2 = set_spd_err / Set_Spd_Fdfwd_Deccel_U.PreviewTimeforDeccels;
+} else {
+    /* {S!d4}Outport: '<Root>/Set Speed FeedForward Deccel (m//s2)' */
+    Set_Spd_Fdfwd_Deccel_Y.SetSpeedFeedForwardDeccelms2 = 0.0;
+}
+/* {S!d8}Outport: '<Root>/Set Speed error (m//s)' incorporates:
+ *  MATLAB Function: '<Root>/Set Speed Match Feedforward'
+ */
+Set_Spd_Fdfwd_Deccel_Y.SetSpeederrorms = set_spd_err;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

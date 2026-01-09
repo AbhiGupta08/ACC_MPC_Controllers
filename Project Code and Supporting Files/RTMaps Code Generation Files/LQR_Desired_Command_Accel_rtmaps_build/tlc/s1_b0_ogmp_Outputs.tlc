@@ -1,0 +1,32 @@
+%implements s1_b0_ogmp_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(3)>\
+%<SLibCG_TrackEI(2)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+/* Outport: '<Root>/LQR Acceleration (m//s2)' incorporates:
+ *  Inport: '<Root>/Following Distance Error (m)'
+ *  Inport: '<Root>/K_dist_err'
+ *  Inport: '<Root>/K_rel_velocity'
+ *  Inport: '<Root>/Relative Velocity (m//s)'
+ *  MATLAB Function: '<Root>/LQR Block'
+ */
+LQR_Desired_Command_Accel_Y.LQRAccelerationms2 = -LQR_Desired_Command_Accel_U.K_dist_err * LQR_Desired_Command_Accel_U.FollowingDistanceErrorm - LQR_Desired_Command_Accel_U.K_rel_velocity * LQR_Desired_Command_Accel_U.RelativeVelocityms;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

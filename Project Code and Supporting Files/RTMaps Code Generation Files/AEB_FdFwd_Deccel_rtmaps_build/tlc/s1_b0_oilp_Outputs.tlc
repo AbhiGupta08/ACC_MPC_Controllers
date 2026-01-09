@@ -1,0 +1,37 @@
+%implements s1_b0_oilp_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(2)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+/* {S!d14}MATLAB Function: '<Root>/AEB Feedforward Compensator' incorporates:
+ *  Inport: '<Root>/Relative Velocity (m//s)'
+ *  Inport: '<Root>/Relative Velocity Threshold (m//s)'
+ */
+if (AEB_FdFwd_Deccel_U.RelativeVelocityms > -AEB_FdFwd_Deccel_U.RelativeVelocityThresholdms) {
+    /* {S!d10}Outport: '<Root>/AEB FeedForward Deccel (m//s2)' */
+    AEB_FdFwd_Deccel_Y.AEBFeedForwardDeccelms2 = 0.0;
+} else {
+    /* {S!d12}Outport: '<Root>/AEB FeedForward Deccel (m//s2)' incorporates:
+ *  Inport: '<Root>/Preview Time for Deccel (s)'
+ */
+    AEB_FdFwd_Deccel_Y.AEBFeedForwardDeccelms2 = AEB_FdFwd_Deccel_U.RelativeVelocityms / AEB_FdFwd_Deccel_U.PreviewTimeforDeccels;
+}
+/* {E!d14}End of MATLAB Function: '<Root>/AEB Feedforward Compensator' */
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

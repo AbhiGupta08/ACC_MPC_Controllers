@@ -1,0 +1,40 @@
+%implements s1_b0_oilp_ModelClassDefinition "C"
+%function ModelClassDefinition(block) Output
+%openfile tmp
+class AEB_FdFwd_Deccel final 
+{
+  public:
+    %<SLibFillInPublicClassMembers()>
+        /* Root inports set method */
+void setExternalInputs(const ExtU_AEB_FdFwd_Deccel_T *pExtU_AEB_FdFwd_Deccel_T)
+    {
+        AEB_FdFwd_Deccel_U = *pExtU_AEB_FdFwd_Deccel_T;
+    }
+        /* Root outports get method */
+const ExtY_AEB_FdFwd_Deccel_T &getExternalOutputs() const
+    {
+        return AEB_FdFwd_Deccel_Y;
+    }
+        /* Initial conditions function */
+void initialize();
+        /* model step function */
+%<FcnStaticOnEmptyOutputUpdateMethod()>void step()%<AddConstToStepIfNeccessary("Outputs")>;
+        /* model terminate function */
+%<FcnStaticOnEmptyTermMethod()>void terminate()%<AddConstToTermIfNecessary("terminate")>;
+        /* Constructor */
+AEB_FdFwd_Deccel();
+        /* Destructor */
+~AEB_FdFwd_Deccel();
+  protected:
+    %<SLibFillInProtectedClassMembers()>
+  private:
+    /* External inputs */
+    ExtU_AEB_FdFwd_Deccel_T AEB_FdFwd_Deccel_U;
+    /* External outputs */
+    ExtY_AEB_FdFwd_Deccel_T AEB_FdFwd_Deccel_Y;
+    %<SLibFillInPrivateClassMembers()>
+    %<SLibFillInLastPrivateClassMembers()>
+};
+%closefile tmp
+%return tmp
+%endfunction

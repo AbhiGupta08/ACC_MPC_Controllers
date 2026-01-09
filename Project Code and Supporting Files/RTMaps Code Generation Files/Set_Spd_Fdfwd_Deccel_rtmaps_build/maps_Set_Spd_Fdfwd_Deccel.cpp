@@ -859,7 +859,7 @@ ComponentClass::ComponentClass(const char* componentName,
   MAPSComponentDefinition& md)
   : MAPSComponent(componentName, md)
   , m_firstTime_Dynamic{ true }
-  , m_skModelStepSize(static_cast<MAPSDelay>(1000000.0 * 0.2))
+  , m_skModelStepSize(static_cast<MAPSDelay>(1000000.0 * 0.05))
 {
   computeSkModelInputs();
   computeSkModelOutputs();

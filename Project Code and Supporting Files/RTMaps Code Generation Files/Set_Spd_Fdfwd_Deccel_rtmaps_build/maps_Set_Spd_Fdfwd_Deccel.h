@@ -285,7 +285,7 @@ struct ComponentOutputInfo
 
 #define ComponentClass                 maps_Set_Spd_Fdfwd_Deccel
 #define ComponentName                  "Set_Spd_Fdfwd_Deccel"
-#define ComponentVersion               "1.1"
+#define ComponentVersion               "1.3"
 
 class ComponentClass : public MAPSComponent
 {

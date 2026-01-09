@@ -1,0 +1,42 @@
+%implements s1_b0_0ayp_ModelClassDefinition "C"
+%function ModelClassDefinition(block) Output
+%openfile tmp
+class accel_command_smoothing_saturation final 
+{
+  public:
+    %<SLibFillInPublicClassMembers()>
+        /* Root inports set method */
+void setExternalInputs(const ExtU_accel_command_smoothing__T *pExtU_accel_command_smoothing__T)
+    {
+        accel_command_smoothing_satur_U = *pExtU_accel_command_smoothing__T;
+    }
+        /* Root outports get method */
+const ExtY_accel_command_smoothing__T &getExternalOutputs() const
+    {
+        return accel_command_smoothing_satur_Y;
+    }
+        /* Initial conditions function */
+void initialize();
+        /* model step function */
+%<FcnStaticOnEmptyOutputUpdateMethod()>void step()%<AddConstToStepIfNeccessary("Outputs")>;
+        /* model terminate function */
+%<FcnStaticOnEmptyTermMethod()>void terminate()%<AddConstToTermIfNecessary("terminate")>;
+        /* Constructor */
+accel_command_smoothing_saturation();
+        /* Destructor */
+~accel_command_smoothing_saturation();
+  protected:
+    %<SLibFillInProtectedClassMembers()>
+  private:
+    /* External inputs */
+    ExtU_accel_command_smoothing__T accel_command_smoothing_satur_U;
+    /* External outputs */
+    ExtY_accel_command_smoothing__T accel_command_smoothing_satur_Y;
+    /* Block states */
+    DW_accel_command_smoothing_sa_T accel_command_smoothing_satu_DW;
+    %<SLibFillInPrivateClassMembers()>
+    %<SLibFillInLastPrivateClassMembers()>
+};
+%closefile tmp
+%return tmp
+%endfunction

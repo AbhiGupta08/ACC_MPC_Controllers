@@ -1,0 +1,30 @@
+%implements s0_b0_zhyp_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(2)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+/* Outport: '<Root>/Total Desired Acceleration (m//s2)' incorporates:
+ *  Inport: '<Root>/Inport'
+ *  Inport: '<Root>/Inport1'
+ *  Inport: '<Root>/Inport2'
+ *  Sum: '<Root>/Add'
+ */
+Add3Elements_Y.TotalDesiredAccelerationms2 = (Add3Elements_U.Inport + Add3Elements_U.Inport2) + Add3Elements_U.Inport1;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

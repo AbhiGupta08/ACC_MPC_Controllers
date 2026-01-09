@@ -1,0 +1,61 @@
+%implements s1_b0_0ayp_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T rtb_u_cmd;
+real_T rtb_u_cmd_tmp;
+real_T rtb_u_cmd_tmp_0;
+%closefile localVarDecl
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(7)>\
+%<SLibCG_TrackEI(6)>\
+%<SLibCG_TrackEI(5)>\
+%<SLibCG_TrackEI(4)>\
+%<SLibCG_TrackEI(3)>\
+%<SLibCG_TrackEI(2)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+/* {S!d2}MATLAB Function: '<Root>/acceleration smoothing and saturation' incorporates:
+ *  Inport: '<Root>/Acceleration Max (m//s2)'
+ *  Inport: '<Root>/Acceleration Min (m//s2)'
+ *  Inport: '<Root>/Desired Total Accel (m//s2)'
+ *  Inport: '<Root>/Host Velocity (m//s)'
+ *  Inport: '<Root>/Jerk Max Lim (m//s3)'
+ *  Inport: '<Root>/Sample Timestep (s)'
+ *  Inport: '<Root>/Set Speed Target (m//s)'
+ *  Inport: '<Root>/rho_weight'
+ */
+rtb_u_cmd_tmp = accel_command_smoothing_satur_U.JerkMaxLimms3 * accel_command_smoothing_satur_U.SampleTimesteps;
+rtb_u_cmd_tmp_0 = accel_command_smoothing_satu_DW.u_k_minus_1 - rtb_u_cmd_tmp;
+rtb_u_cmd_tmp += accel_command_smoothing_satu_DW.u_k_minus_1;
+rtb_u_cmd = std::fmin(std::fmax(std::fmin(std::fmax((accel_command_smoothing_satur_U.rho_weight * accel_command_smoothing_satu_DW.u_k_minus_1 + accel_command_smoothing_satur_U.DesiredTotalAccelms2) / (accel_command_smoothing_satur_U.rho_weight + 1.0), rtb_u_cmd_tmp_0), rtb_u_cmd_tmp), accel_command_smoothing_satur_U.AccelerationMinms2), accel_command_smoothing_satur_U.AccelerationMaxms2);
+if ((accel_command_smoothing_satur_U.HostVelocityms <= 0.001) && (rtb_u_cmd < 0.0)) {
+    rtb_u_cmd = 0.0;
+    accel_command_smoothing_satu_DW.u_k_minus_1 = 0.0;
+} else if ((accel_command_smoothing_satur_U.HostVelocityms >= accel_command_smoothing_satur_U.SetSpeedTargetms - 0.5) && (rtb_u_cmd >= 0.0)) {
+    rtb_u_cmd = std::fmin(std::fmax(0.0, rtb_u_cmd_tmp_0), rtb_u_cmd_tmp);
+    accel_command_smoothing_satu_DW.u_k_minus_1 = rtb_u_cmd;
+} else {
+    accel_command_smoothing_satu_DW.u_k_minus_1 = rtb_u_cmd;
+}
+/* {E!d2}End of MATLAB Function: '<Root>/acceleration smoothing and saturation' */
+
+/* {S!d4}Outport: '<Root>/Final Acceleration Command (m//s2)' */
+accel_command_smoothing_satur_Y.FinalAccelerationCommandms2 = rtb_u_cmd;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

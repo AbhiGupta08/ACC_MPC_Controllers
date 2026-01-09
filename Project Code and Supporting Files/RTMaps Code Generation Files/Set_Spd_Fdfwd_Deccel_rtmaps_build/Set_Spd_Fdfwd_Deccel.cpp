@@ -7,9 +7,9 @@
  *
  * Code generation for model "Set_Spd_Fdfwd_Deccel".
  *
- * Model version              : 1.1
+ * Model version              : 1.3
  * Simulink Coder version : 24.1 (R2024a) 19-Nov-2023
- * C++ source code generated on : Thu Jan  8 12:46:33 2026
+ * C++ source code generated on : Fri Jan  9 06:20:40 2026
  *
  * Target selection: rtmaps.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
