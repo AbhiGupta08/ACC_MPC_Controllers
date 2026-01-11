@@ -1,0 +1,40 @@
+%implements s1_b0_x36r_ModelClassDefinition "C"
+%function ModelClassDefinition(block) Output
+%openfile tmp
+class Saturator_with_bounds_inputs final 
+{
+  public:
+    %<SLibFillInPublicClassMembers()>
+        /* Root inports set method */
+void setExternalInputs(const ExtU_Saturator_with_bounds_in_T *pExtU_Saturator_with_bounds_in_T)
+    {
+        Saturator_with_bounds_inputs_U = *pExtU_Saturator_with_bounds_in_T;
+    }
+        /* Root outports get method */
+const ExtY_Saturator_with_bounds_in_T &getExternalOutputs() const
+    {
+        return Saturator_with_bounds_inputs_Y;
+    }
+        /* Initial conditions function */
+void initialize();
+        /* model step function */
+%<FcnStaticOnEmptyOutputUpdateMethod()>void step()%<AddConstToStepIfNeccessary("Outputs")>;
+        /* model terminate function */
+%<FcnStaticOnEmptyTermMethod()>void terminate()%<AddConstToTermIfNecessary("terminate")>;
+        /* Constructor */
+Saturator_with_bounds_inputs();
+        /* Destructor */
+~Saturator_with_bounds_inputs();
+  protected:
+    %<SLibFillInProtectedClassMembers()>
+  private:
+    /* External inputs */
+    ExtU_Saturator_with_bounds_in_T Saturator_with_bounds_inputs_U;
+    /* External outputs */
+    ExtY_Saturator_with_bounds_in_T Saturator_with_bounds_inputs_Y;
+    %<SLibFillInPrivateClassMembers()>
+    %<SLibFillInLastPrivateClassMembers()>
+};
+%closefile tmp
+%return tmp
+%endfunction

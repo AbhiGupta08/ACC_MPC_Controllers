@@ -1,0 +1,45 @@
+%implements s1_b0_x36r_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(2)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+/* {S!d8}Switch: '<S1>/Switch2' incorporates:
+ *  Inport: '<Root>/Lower Bound'
+ *  Inport: '<Root>/Signal Input'
+ *  Inport: '<Root>/Upper Bound'
+ *  RelationalOperator: '<S1>/LowerRelop1'
+ *  RelationalOperator: '<S1>/UpperRelop'
+ *  Switch: '<S1>/Switch'
+ */
+if (Saturator_with_bounds_inputs_U.SignalInput > Saturator_with_bounds_inputs_U.UpperBound) {
+    /* {S!d2}Outport: '<Root>/Signal Output' */
+    Saturator_with_bounds_inputs_Y.SignalOutput = Saturator_with_bounds_inputs_U.UpperBound;
+} else if (Saturator_with_bounds_inputs_U.SignalInput < Saturator_with_bounds_inputs_U.LowerBound) {
+    /* {S!d4}Switch: '<S1>/Switch' incorporates:
+ *  Inport: '<Root>/Lower Bound'
+ *  Outport: '<Root>/Signal Output'
+ */
+    Saturator_with_bounds_inputs_Y.SignalOutput = Saturator_with_bounds_inputs_U.LowerBound;
+} else {
+    /* {S!d6}Outport: '<Root>/Signal Output' */
+    Saturator_with_bounds_inputs_Y.SignalOutput = Saturator_with_bounds_inputs_U.SignalInput;
+}
+/* {E!d8}End of Switch: '<S1>/Switch2' */
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction

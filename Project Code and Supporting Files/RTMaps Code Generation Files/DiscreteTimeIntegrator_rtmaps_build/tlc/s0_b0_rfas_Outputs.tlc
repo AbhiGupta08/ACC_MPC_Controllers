@@ -1,0 +1,29 @@
+%implements s0_b0_rfas_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(0)>\
+/* Outport: '<Root>/Integrator Out' incorporates:
+ *  DiscreteIntegrator: '<Root>/Discrete Integrator'
+ */
+DiscreteTimeIntegrator_Y.IntegratorOut = DiscreteTimeIntegrator_DW.DiscreteIntegrator_DSTATE;
+/* Update for DiscreteIntegrator: '<Root>/Discrete Integrator' incorporates:
+ *  Inport: '<Root>/Integrator In'
+ */
+DiscreteTimeIntegrator_DW.DiscreteIntegrator_DSTATE += DiscreteTimeIntegrator_P.DiscreteIntegrator_gainval * DiscreteTimeIntegrator_U.IntegratorIn;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 1, fcnProtoType)>
+%endfunction
