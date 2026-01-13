@@ -1,7 +1,0 @@
-RTMaps Runtime Release v4.13.1 (build 265473) for Win64
-Copyright (c) 2000-2025 INTEMPORA S.A.S.
-This product is licensed to: Gupta (RLM).
-Session: unspecified
-Launched at 14:58:47.945 (31/10/2025) UTC-04:00 - 18:58:47.945 (31/10/2025) UTC
-[Misc]
-00:06.970309 @ Record LQR_forRTMaps10ms_1.Outport(LQR_forRTMaps10ms.o_float64[0x8000000000000004,,,16,1]) as numeric_binary

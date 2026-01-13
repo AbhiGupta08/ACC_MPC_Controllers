@@ -36,7 +36,7 @@
   <ClocksManagement>
     <Property LongName="ClocksManagement.activeClock" Type="4"><![CDATA[1|0|RTMaps_standard_clock]]></Property>
   </ClocksManagement>
-  <MacroComponent InstanceName="msg1_receiver_1" Model="msg1_receiver" x="24" y="16" z="0">
+  <MacroComponent InstanceName="msg1_receiver_1" Model="msg1_receiver" x="8" y="72" z="0">
     <PropertyOverload LongName="LocalIP" Type="3"><![CDATA[192.168.140.10]]></PropertyOverload>
     <PropertyOverload LongName="autoStart" Type="0">true</PropertyOverload>
     <OutputPropertyOverload LongName="rel_distance_m.subsampling" Type="1">1</OutputPropertyOverload>
@@ -175,7 +175,7 @@
     <Property LongName="accel_command_smoothing_saturation_1.priority" Type="1">128</Property>
     <Property LongName="accel_command_smoothing_saturation_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="Accelerations_to_be_added" Model="DataViewer" Version="2.1.1" x="1040" y="624" z="0">
+  <Component InstanceName="Accelerations_to_be_added" Model="DataViewer" Version="2.1.1" x="1160" y="608" z="0">
     <Input LongName="Accelerations_to_be_added.input_0" Name="input_0">
       <Property LongName="Accelerations_to_be_added.input_0.readerType" Type="1">4</Property>
       <Property LongName="Accelerations_to_be_added.input_0.subsampling" Type="1">1</Property>
@@ -196,6 +196,10 @@
       <Property LongName="Accelerations_to_be_added.input_4.readerType" Type="1">4</Property>
       <Property LongName="Accelerations_to_be_added.input_4.subsampling" Type="1">1</Property>
     </Input>
+    <Input LongName="Accelerations_to_be_added.input_5" Name="input_5">
+      <Property LongName="Accelerations_to_be_added.input_5.readerType" Type="1">4</Property>
+      <Property LongName="Accelerations_to_be_added.input_5.subsampling" Type="1">1</Property>
+    </Input>
     <Property LongName="Accelerations_to_be_added.begin_guard" Type="0" SubType="128">true</Property>
     <ReadOnlyProperty LongName="Accelerations_to_be_added.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
     <Property LongName="Accelerations_to_be_added.autoDirty" Type="0">true</Property>
@@ -204,14 +208,14 @@
     <Property LongName="Accelerations_to_be_added.moveable" Type="0">true</Property>
     <Property LongName="Accelerations_to_be_added.hidden" Type="0">false</Property>
     <Property LongName="Accelerations_to_be_added.title" Type="3"><![CDATA[]]></Property>
-    <Property LongName="Accelerations_to_be_added.x" Type="1">26</Property>
-    <Property LongName="Accelerations_to_be_added.y" Type="1">69</Property>
-    <Property LongName="Accelerations_to_be_added.width" Type="1">504</Property>
-    <Property LongName="Accelerations_to_be_added.height" Type="1">441</Property>
+    <Property LongName="Accelerations_to_be_added.x" Type="1">987</Property>
+    <Property LongName="Accelerations_to_be_added.y" Type="1">90</Property>
+    <Property LongName="Accelerations_to_be_added.width" Type="1">710</Property>
+    <Property LongName="Accelerations_to_be_added.height" Type="1">528</Property>
     <Property LongName="Accelerations_to_be_added.end_guard" Type="0" SubType="128">true</Property>
     <ReadOnlyProperty LongName="Accelerations_to_be_added.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
     <ReadOnlyProperty LongName="Accelerations_to_be_added.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
-    <Property LongName="Accelerations_to_be_added.nbInputs" Type="1">5</Property>
+    <Property LongName="Accelerations_to_be_added.nbInputs" Type="1">6</Property>
     <Property LongName="Accelerations_to_be_added.compactMode" Type="0">false</Property>
     <Property LongName="Accelerations_to_be_added.showInfo" Type="0">true</Property>
     <Property LongName="Accelerations_to_be_added.showData" Type="0">true</Property>
@@ -227,8 +231,8 @@
     <Property LongName="Accelerations_to_be_added.unsignedInteger32Format" Type="3"><![CDATA[%I32u]]></Property>
     <Property LongName="Accelerations_to_be_added.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
     <Property LongName="Accelerations_to_be_added.hexDisplay" Type="0">false</Property>
-    <Property LongName="Accelerations_to_be_added.internalState" Type="3" SubType="128"><![CDATA[238;256]]></Property>
-    <Property LongName="Accelerations_to_be_added.expandedState" Type="3" SubType="128"><![CDATA[1|Saturator_with_bounds_inputs_1.SignalOutput;0|Info:Saturator_with_bounds_inputs_1.SignalOutput;1|Data:Saturator_with_bounds_inputs_1.SignalOutput;1|LQR_Desired_Command_Accel_1.LQRAccelerationms2;0|Info:LQR_Desired_Command_Accel_1.LQRAccelerationms2;1|Data:LQR_Desired_Command_Accel_1.LQRAccelerationms2;1|AEB_FdFwd_Deccel_1.AEBFeedForwardDeccelms2;0|Info:AEB_FdFwd_Deccel_1.AEBFeedForwardDeccelms2;1|Data:AEB_FdFwd_Deccel_1.AEBFeedForwardDeccelms2;1|Set_Spd_Fdfwd_Deccel_1.SetSpeedFeedForwardDeccelms2;0|Info:Set_Spd_Fdfwd_Deccel_1.SetSpeedFeedForwardDeccelms2;1|Data:Set_Spd_Fdfwd_Deccel_1.SetSpeedFeedForwardDeccelms2;1|Set_Spd_Fdfwd_Deccel_1.SetSpeederrorms;0|Info:Set_Spd_Fdfwd_Deccel_1.SetSpeederrorms;1|Data:Set_Spd_Fdfwd_Deccel_1.SetSpeederrorms]]></Property>
+    <Property LongName="Accelerations_to_be_added.internalState" Type="3" SubType="128"><![CDATA[238;462]]></Property>
+    <Property LongName="Accelerations_to_be_added.expandedState" Type="3" SubType="128"><![CDATA[1|Saturator_with_bounds_inputs_1.SignalOutput;0|Info:Saturator_with_bounds_inputs_1.SignalOutput;1|Data:Saturator_with_bounds_inputs_1.SignalOutput;1|LQR_Desired_Command_Accel_1.LQRAccelerationms2;0|Info:LQR_Desired_Command_Accel_1.LQRAccelerationms2;1|Data:LQR_Desired_Command_Accel_1.LQRAccelerationms2;1|AEB_FdFwd_Deccel_1.AEBFeedForwardDeccelms2;0|Info:AEB_FdFwd_Deccel_1.AEBFeedForwardDeccelms2;1|Data:AEB_FdFwd_Deccel_1.AEBFeedForwardDeccelms2;1|Set_Spd_Fdfwd_Deccel_1.SetSpeedFeedForwardDeccelms2;0|Info:Set_Spd_Fdfwd_Deccel_1.SetSpeedFeedForwardDeccelms2;1|Data:Set_Spd_Fdfwd_Deccel_1.SetSpeedFeedForwardDeccelms2;1|Set_Spd_Fdfwd_Deccel_1.SetSpeederrorms;0|Info:Set_Spd_Fdfwd_Deccel_1.SetSpeederrorms;1|Data:Set_Spd_Fdfwd_Deccel_1.SetSpeederrorms;1|Add3Elements_1.TotalDesiredAccelerationms2;0|Info:Add3Elements_1.TotalDesiredAccelerationms2;1|Data:Add3Elements_1.TotalDesiredAccelerationms2]]></Property>
     <ReadOnlyProperty LongName="Accelerations_to_be_added.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
     <Property LongName="Accelerations_to_be_added.threaded" Type="0">true</Property>
     <Property LongName="Accelerations_to_be_added.priority" Type="1">128</Property>
@@ -292,7 +296,77 @@
     <Property LongName="AEB_FdFwd_Deccel_1.priority" Type="1">128</Property>
     <Property LongName="AEB_FdFwd_Deccel_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="Aurelion_feedback" Model="DataViewer" Version="2.1.1" x="352" y="8" z="0">
+  <Component InstanceName="Aurelion_data_procc" Model="PythonBridge" Version="4.9.0" x="336" y="16" z="0">
+    <Input LongName="Aurelion_data_procc.relative_dist_1" Name="relative_dist_1">
+      <Property LongName="Aurelion_data_procc.relative_dist_1.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_data_procc.relative_dist_1.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_data_procc.relative_vel_1" Name="relative_vel_1">
+      <Property LongName="Aurelion_data_procc.relative_vel_1.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_data_procc.relative_vel_1.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_data_procc.sim_ego_vel" Name="sim_ego_vel">
+      <Property LongName="Aurelion_data_procc.sim_ego_vel.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_data_procc.sim_ego_vel.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_data_procc.sim_state" Name="sim_state">
+      <Property LongName="Aurelion_data_procc.sim_state.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_data_procc.sim_state.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_data_procc.sim_mode" Name="sim_mode">
+      <Property LongName="Aurelion_data_procc.sim_mode.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_data_procc.sim_mode.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="Aurelion_data_procc.closest_follow_dist" Name="closest_follow_dist">
+      <Property LongName="Aurelion_data_procc.closest_follow_dist.subsampling" Type="1">1</Property>
+      <Property LongName="Aurelion_data_procc.closest_follow_dist.fifosize" Type="1">16</Property>
+      <Property LongName="Aurelion_data_procc.closest_follow_dist.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Aurelion_data_procc.rel_vel_closest" Name="rel_vel_closest">
+      <Property LongName="Aurelion_data_procc.rel_vel_closest.subsampling" Type="1">1</Property>
+      <Property LongName="Aurelion_data_procc.rel_vel_closest.fifosize" Type="1">16</Property>
+      <Property LongName="Aurelion_data_procc.rel_vel_closest.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Aurelion_data_procc.sim_ego_vel_out" Name="sim_ego_vel_out">
+      <Property LongName="Aurelion_data_procc.sim_ego_vel_out.subsampling" Type="1">1</Property>
+      <Property LongName="Aurelion_data_procc.sim_ego_vel_out.fifosize" Type="1">16</Property>
+      <Property LongName="Aurelion_data_procc.sim_ego_vel_out.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Aurelion_data_procc.sim_state_out" Name="sim_state_out">
+      <Property LongName="Aurelion_data_procc.sim_state_out.subsampling" Type="1">1</Property>
+      <Property LongName="Aurelion_data_procc.sim_state_out.fifosize" Type="1">16</Property>
+      <Property LongName="Aurelion_data_procc.sim_state_out.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Aurelion_data_procc.guard_begin" Type="0" SubType="128">true</Property>
+    <Property LongName="Aurelion_data_procc.internalInputs" Type="3" SubType="128"><![CDATA[relative_dist_1;11==#relative_vel_1;11==#sim_ego_vel;11==#sim_state;11==#sim_mode;11==]]></Property>
+    <Property LongName="Aurelion_data_procc.internalOutputs" Type="3" SubType="128"><![CDATA[closest_follow_dist;11==;0#rel_vel_closest;11==;0#sim_ego_vel_out;11==;0#sim_state_out;11==;0]]></Property>
+    <Property LongName="Aurelion_data_procc.internalProperties" Type="3" SubType="128"><![CDATA[]]></Property>
+    <ReadOnlyProperty LongName="Aurelion_data_procc.advance_begin_configuration" Type="3" SubType="256"><![CDATA[Advanced Configuration]]></ReadOnlyProperty>
+    <Property LongName="Aurelion_data_procc.deathBehavior" Type="4"><![CDATA[3|1|WAIT FOR PROCESS INDEFINITELY|KILL PROCESS AFTER TIMEOUT (5sec)|START ANOTHER PROCESS]]></Property>
+    <Property LongName="Aurelion_data_procc.capturePythonPrint" Type="0">true</Property>
+    <Property LongName="Aurelion_data_procc.useTCPOnly" Type="0">false</Property>
+    <ReadOnlyProperty LongName="Aurelion_data_procc.pythonPID" Type="1">3828</ReadOnlyProperty>
+    <Property LongName="Aurelion_data_procc.FileSHMSize" Type="1">15000000</Property>
+    <Property LongName="Aurelion_data_procc.useNuitka" Type="0">false</Property>
+    <Property LongName="Aurelion_data_procc.loadingTimeout" Type="1">8000000</Property>
+    <Property LongName="Aurelion_data_procc.alwaysReloadAtStart" Type="0">false</Property>
+    <ReadOnlyProperty LongName="Aurelion_data_procc.advance_end_configuration" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Aurelion_data_procc.basic_begin_configuration" Type="3" SubType="256"><![CDATA[Basic Configuration]]></ReadOnlyProperty>
+    <Property LongName="Aurelion_data_procc.className" Type="3"><![CDATA[rtmaps_python]]></Property>
+    <Property LongName="Aurelion_data_procc.pythonExecutable" Type="3" SubType="16"><![CDATA[C:\Python313\python.exe]]></Property>
+    <Property LongName="Aurelion_data_procc.pythonFilename" Type="3" SubType="80"><![CDATA[D:\UWAFT\CAV\ACC Resources and MPC code\ACC_MPC_Controllers\HIL ACC MPC code and supporting files\ACC_MPC_Python_files\Aurelion_data_process.py]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/ACC_MPC_Python_files/Aurelion_data_process.py]]></Relative></Property>
+    <Property LongName="Aurelion_data_procc.readingPolicy" Type="4"><![CDATA[5|2|Synchro|Reactive|Sampling|Triggered by First Input|Periodic Resampling Based on Timestamps]]></Property>
+    <Property LongName="Aurelion_data_procc.samplingPeriod" Type="1" SubType="1">50000</Property>
+    <Property LongName="Aurelion_data_procc.inputsBehavior" Type="4"><![CDATA[2|1|AllowEmptyInputs|Wait4AllInputs]]></Property>
+    <ReadOnlyProperty LongName="Aurelion_data_procc.basic_end_configuration" Type="0" SubType="512">true</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Aurelion_data_procc.userSubsection" Type="3" SubType="256"><![CDATA[User Properties]]></ReadOnlyProperty>
+    <Property LongName="Aurelion_data_procc.guard_end" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Aurelion_data_procc.userSubsectionEnd" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="Aurelion_data_procc.threaded" Type="0">true</Property>
+    <Property LongName="Aurelion_data_procc.priority" Type="1">128</Property>
+    <Property LongName="Aurelion_data_procc.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="Aurelion_feedback" Model="DataViewer" Version="2.1.1" x="496" y="-176" z="0">
     <Input LongName="Aurelion_feedback.input_0" Name="input_0">
       <Property LongName="Aurelion_feedback.input_0.readerType" Type="1">4</Property>
       <Property LongName="Aurelion_feedback.input_0.subsampling" Type="1">1</Property>
@@ -309,6 +383,30 @@
       <Property LongName="Aurelion_feedback.input_3.readerType" Type="1">4</Property>
       <Property LongName="Aurelion_feedback.input_3.subsampling" Type="1">1</Property>
     </Input>
+    <Input LongName="Aurelion_feedback.input_4" Name="input_4">
+      <Property LongName="Aurelion_feedback.input_4.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_feedback.input_4.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_feedback.input_5" Name="input_5">
+      <Property LongName="Aurelion_feedback.input_5.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_feedback.input_5.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_feedback.input_6" Name="input_6">
+      <Property LongName="Aurelion_feedback.input_6.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_feedback.input_6.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_feedback.input_7" Name="input_7">
+      <Property LongName="Aurelion_feedback.input_7.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_feedback.input_7.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_feedback.input_8" Name="input_8">
+      <Property LongName="Aurelion_feedback.input_8.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_feedback.input_8.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Aurelion_feedback.input_9" Name="input_9">
+      <Property LongName="Aurelion_feedback.input_9.readerType" Type="1">4</Property>
+      <Property LongName="Aurelion_feedback.input_9.subsampling" Type="1">1</Property>
+    </Input>
     <Property LongName="Aurelion_feedback.begin_guard" Type="0" SubType="128">true</Property>
     <ReadOnlyProperty LongName="Aurelion_feedback.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
     <Property LongName="Aurelion_feedback.autoDirty" Type="0">true</Property>
@@ -317,14 +415,14 @@
     <Property LongName="Aurelion_feedback.moveable" Type="0">true</Property>
     <Property LongName="Aurelion_feedback.hidden" Type="0">false</Property>
     <Property LongName="Aurelion_feedback.title" Type="3"><![CDATA[]]></Property>
-    <Property LongName="Aurelion_feedback.x" Type="1">9</Property>
-    <Property LongName="Aurelion_feedback.y" Type="1">557</Property>
+    <Property LongName="Aurelion_feedback.x" Type="1">77</Property>
+    <Property LongName="Aurelion_feedback.y" Type="1">555</Property>
     <Property LongName="Aurelion_feedback.width" Type="1">530</Property>
     <Property LongName="Aurelion_feedback.height" Type="1">420</Property>
     <Property LongName="Aurelion_feedback.end_guard" Type="0" SubType="128">true</Property>
     <ReadOnlyProperty LongName="Aurelion_feedback.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
     <ReadOnlyProperty LongName="Aurelion_feedback.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
-    <Property LongName="Aurelion_feedback.nbInputs" Type="1">4</Property>
+    <Property LongName="Aurelion_feedback.nbInputs" Type="1">10</Property>
     <Property LongName="Aurelion_feedback.compactMode" Type="0">false</Property>
     <Property LongName="Aurelion_feedback.showInfo" Type="0">true</Property>
     <Property LongName="Aurelion_feedback.showData" Type="0">true</Property>
@@ -340,8 +438,8 @@
     <Property LongName="Aurelion_feedback.unsignedInteger32Format" Type="3"><![CDATA[%I32u]]></Property>
     <Property LongName="Aurelion_feedback.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
     <Property LongName="Aurelion_feedback.hexDisplay" Type="0">false</Property>
-    <Property LongName="Aurelion_feedback.internalState" Type="3" SubType="128"><![CDATA[238;282]]></Property>
-    <Property LongName="Aurelion_feedback.expandedState" Type="3" SubType="128"><![CDATA[1|msg1_receiver_1::red_dist_m_1.element0;0|Info:msg1_receiver_1::red_dist_m_1.element0;1|Data:msg1_receiver_1::red_dist_m_1.element0;1|msg1_receiver_1::rel_spd_mps_1.element0;0|Info:msg1_receiver_1::rel_spd_mps_1.element0;1|Data:msg1_receiver_1::rel_spd_mps_1.element0;1|msg1_receiver_1::ego_spd_mps.element0;0|Info:msg1_receiver_1::ego_spd_mps.element0;1|Data:msg1_receiver_1::ego_spd_mps.element0;1|msg1_receiver_1::sim_time_.element0;0|Info:msg1_receiver_1::sim_time_.element0;1|Data:msg1_receiver_1::sim_time_.element0]]></Property>
+    <Property LongName="Aurelion_feedback.internalState" Type="3" SubType="128"><![CDATA[238;265]]></Property>
+    <Property LongName="Aurelion_feedback.expandedState" Type="3" SubType="128"><![CDATA[1|msg1_receiver_1::red_dist_m_1.element0;0|Info:msg1_receiver_1::red_dist_m_1.element0;1|Data:msg1_receiver_1::red_dist_m_1.element0;1|msg1_receiver_1::rel_spd_mps_1.element0;0|Info:msg1_receiver_1::rel_spd_mps_1.element0;1|Data:msg1_receiver_1::rel_spd_mps_1.element0;1|msg1_receiver_1::ego_spd_mps.element0;0|Info:msg1_receiver_1::ego_spd_mps.element0;1|Data:msg1_receiver_1::ego_spd_mps.element0;1|msg1_receiver_1::sim_time_.element0;0|Info:msg1_receiver_1::sim_time_.element0;1|Data:msg1_receiver_1::sim_time_.element0;1|msg1_receiver_1::sim_state_.element0;0|Info:msg1_receiver_1::sim_state_.element0;1|Data:msg1_receiver_1::sim_state_.element0;1|msg1_receiver_1::sim_mode_.element0;0|Info:msg1_receiver_1::sim_mode_.element0;1|Data:msg1_receiver_1::sim_mode_.element0;1|msg1_receiver_1::dyno_mode_req.element0;0|Info:msg1_receiver_1::dyno_mode_req.element0;1|Data:msg1_receiver_1::dyno_mode_req.element0;1|Aurelion_data_procc.closest_follow_dist;0|Info:Aurelion_data_procc.closest_follow_dist;1|Data:Aurelion_data_procc.closest_follow_dist;1|Aurelion_data_procc.rel_vel_closest;0|Info:Aurelion_data_procc.rel_vel_closest;1|Data:Aurelion_data_procc.rel_vel_closest;1|Aurelion_data_procc.sim_ego_vel_out;0|Info:Aurelion_data_procc.sim_ego_vel_out;1|Data:Aurelion_data_procc.sim_ego_vel_out]]></Property>
     <ReadOnlyProperty LongName="Aurelion_feedback.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
     <Property LongName="Aurelion_feedback.threaded" Type="0">true</Property>
     <Property LongName="Aurelion_feedback.priority" Type="1">128</Property>
@@ -447,7 +545,7 @@
     <Property LongName="Devectorizer_2.priority" Type="1">128</Property>
     <Property LongName="Devectorizer_2.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="Devectorizer_2_1" Model="Devectorizer" Version="1.3.2" x="208" y="712" z="0">
+  <Component InstanceName="Devectorizer_2_1" Model="Devectorizer" Version="1.3.2" x="160" y="712" z="0">
     <Input LongName="Devectorizer_2_1.iVector" Name="iVector">
       <Property LongName="Devectorizer_2_1.iVector.readerType" Type="1">0</Property>
       <Property LongName="Devectorizer_2_1.iVector.subsampling" Type="1">1</Property>
@@ -492,7 +590,7 @@
     <Property LongName="DiscreteTimeIntegrator_1.priority" Type="1">128</Property>
     <Property LongName="DiscreteTimeIntegrator_1.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="FeedForward_Coeffs" Model="Float_constants_generator" Version="2.2" x="72" y="712" z="0">
+  <Component InstanceName="FeedForward_Coeffs" Model="Float_constants_generator" Version="2.2" x="56" y="712" z="0">
     <Output LongName="FeedForward_Coeffs.output" Name="output">
       <Property LongName="FeedForward_Coeffs.output.subsampling" Type="1">1</Property>
       <Property LongName="FeedForward_Coeffs.output.fifosize" Type="1">16</Property>
@@ -504,7 +602,7 @@
     <Property LongName="FeedForward_Coeffs.outputPeriod" Type="1">10000</Property>
     <Property LongName="FeedForward_Coeffs.value_1" Type="2">4</Property>
     <Property LongName="FeedForward_Coeffs.value_2" Type="2">7</Property>
-    <Property LongName="FeedForward_Coeffs.value_3" Type="2">0.5</Property>
+    <Property LongName="FeedForward_Coeffs.value_3" Type="2">1</Property>
     <Property LongName="FeedForward_Coeffs.threaded" Type="0">true</Property>
     <Property LongName="FeedForward_Coeffs.priority" Type="1">128</Property>
     <Property LongName="FeedForward_Coeffs.autoStart" Type="0">true</Property>
@@ -526,8 +624,8 @@
     <Property LongName="Final_Accel_Cmmd.moveable" Type="0">true</Property>
     <Property LongName="Final_Accel_Cmmd.hidden" Type="0">false</Property>
     <Property LongName="Final_Accel_Cmmd.title" Type="3"><![CDATA[]]></Property>
-    <Property LongName="Final_Accel_Cmmd.x" Type="1">1143</Property>
-    <Property LongName="Final_Accel_Cmmd.y" Type="1">642</Property>
+    <Property LongName="Final_Accel_Cmmd.x" Type="1">1112</Property>
+    <Property LongName="Final_Accel_Cmmd.y" Type="1">623</Property>
     <Property LongName="Final_Accel_Cmmd.width" Type="1">530</Property>
     <Property LongName="Final_Accel_Cmmd.height" Type="1">420</Property>
     <Property LongName="Final_Accel_Cmmd.end_guard" Type="0" SubType="128">true</Property>
@@ -556,7 +654,63 @@
     <Property LongName="Final_Accel_Cmmd.priority" Type="1">128</Property>
     <Property LongName="Final_Accel_Cmmd.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="LQR_Coeffs" Model="Float_constants_generator" Version="2.2" x="48" y="552" z="0">
+  <Component InstanceName="Following_Distance_Calc" Model="PythonBridge" Version="4.9.0" x="448" y="192" z="0">
+    <Input LongName="Following_Distance_Calc.desired_dist_setting" Name="desired_dist_setting">
+      <Property LongName="Following_Distance_Calc.desired_dist_setting.readerType" Type="1">4</Property>
+      <Property LongName="Following_Distance_Calc.desired_dist_setting.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Following_Distance_Calc.host_velocity" Name="host_velocity">
+      <Property LongName="Following_Distance_Calc.host_velocity.readerType" Type="1">4</Property>
+      <Property LongName="Following_Distance_Calc.host_velocity.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Following_Distance_Calc.actual_following_dist" Name="actual_following_dist">
+      <Property LongName="Following_Distance_Calc.actual_following_dist.readerType" Type="1">4</Property>
+      <Property LongName="Following_Distance_Calc.actual_following_dist.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="Following_Distance_Calc.sim_state_in" Name="sim_state_in">
+      <Property LongName="Following_Distance_Calc.sim_state_in.readerType" Type="1">4</Property>
+      <Property LongName="Following_Distance_Calc.sim_state_in.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="Following_Distance_Calc.follow_dist_error" Name="follow_dist_error">
+      <Property LongName="Following_Distance_Calc.follow_dist_error.subsampling" Type="1">1</Property>
+      <Property LongName="Following_Distance_Calc.follow_dist_error.fifosize" Type="1">16</Property>
+      <Property LongName="Following_Distance_Calc.follow_dist_error.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Following_Distance_Calc.desired_follow_dist" Name="desired_follow_dist">
+      <Property LongName="Following_Distance_Calc.desired_follow_dist.subsampling" Type="1">1</Property>
+      <Property LongName="Following_Distance_Calc.desired_follow_dist.fifosize" Type="1">16</Property>
+      <Property LongName="Following_Distance_Calc.desired_follow_dist.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Following_Distance_Calc.guard_begin" Type="0" SubType="128">true</Property>
+    <Property LongName="Following_Distance_Calc.internalInputs" Type="3" SubType="128"><![CDATA[desired_dist_setting;11==#host_velocity;11==#actual_following_dist;11==#sim_state_in;11==]]></Property>
+    <Property LongName="Following_Distance_Calc.internalOutputs" Type="3" SubType="128"><![CDATA[follow_dist_error;11==;0#desired_follow_dist;11==;0]]></Property>
+    <Property LongName="Following_Distance_Calc.internalProperties" Type="3" SubType="128"><![CDATA[]]></Property>
+    <ReadOnlyProperty LongName="Following_Distance_Calc.advance_begin_configuration" Type="3" SubType="256"><![CDATA[Advanced Configuration]]></ReadOnlyProperty>
+    <Property LongName="Following_Distance_Calc.deathBehavior" Type="4"><![CDATA[3|1|WAIT FOR PROCESS INDEFINITELY|KILL PROCESS AFTER TIMEOUT (5sec)|START ANOTHER PROCESS]]></Property>
+    <Property LongName="Following_Distance_Calc.capturePythonPrint" Type="0">true</Property>
+    <Property LongName="Following_Distance_Calc.useTCPOnly" Type="0">false</Property>
+    <ReadOnlyProperty LongName="Following_Distance_Calc.pythonPID" Type="1">8884</ReadOnlyProperty>
+    <Property LongName="Following_Distance_Calc.FileSHMSize" Type="1">15000000</Property>
+    <Property LongName="Following_Distance_Calc.useNuitka" Type="0">false</Property>
+    <Property LongName="Following_Distance_Calc.loadingTimeout" Type="1">8000000</Property>
+    <Property LongName="Following_Distance_Calc.alwaysReloadAtStart" Type="0">false</Property>
+    <ReadOnlyProperty LongName="Following_Distance_Calc.advance_end_configuration" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Following_Distance_Calc.basic_begin_configuration" Type="3" SubType="256"><![CDATA[Basic Configuration]]></ReadOnlyProperty>
+    <Property LongName="Following_Distance_Calc.className" Type="3"><![CDATA[rtmaps_python]]></Property>
+    <Property LongName="Following_Distance_Calc.pythonExecutable" Type="3" SubType="16"><![CDATA[C:\Python313\python.exe]]></Property>
+    <Property LongName="Following_Distance_Calc.pythonFilename" Type="3" SubType="80"><![CDATA[D:/UWAFT/CAV/ACC Resources and MPC code/ACC_MPC_Controllers/HIL ACC MPC code and supporting files/ACC_MPC_Python_files/desired_follow_dist_error_calc.py]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/ACC_MPC_Python_files/desired_follow_dist_error_calc.py]]></Relative></Property>
+    <Property LongName="Following_Distance_Calc.readingPolicy" Type="4"><![CDATA[5|2|Synchro|Reactive|Sampling|Triggered by First Input|Periodic Resampling Based on Timestamps]]></Property>
+    <Property LongName="Following_Distance_Calc.samplingPeriod" Type="1" SubType="1">50000</Property>
+    <Property LongName="Following_Distance_Calc.inputsBehavior" Type="4"><![CDATA[2|1|AllowEmptyInputs|Wait4AllInputs]]></Property>
+    <ReadOnlyProperty LongName="Following_Distance_Calc.basic_end_configuration" Type="0" SubType="512">true</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Following_Distance_Calc.userSubsection" Type="3" SubType="256"><![CDATA[User Properties]]></ReadOnlyProperty>
+    <Property LongName="Following_Distance_Calc.guard_end" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Following_Distance_Calc.userSubsectionEnd" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="Following_Distance_Calc.threaded" Type="0">true</Property>
+    <Property LongName="Following_Distance_Calc.priority" Type="1">128</Property>
+    <Property LongName="Following_Distance_Calc.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="LQR_Coeffs" Model="Float_constants_generator" Version="2.2" x="56" y="544" z="0">
     <Output LongName="LQR_Coeffs.output" Name="output">
       <Property LongName="LQR_Coeffs.output.subsampling" Type="1">1</Property>
       <Property LongName="LQR_Coeffs.output.fifosize" Type="1">16</Property>
@@ -625,92 +779,9 @@
     <Property LongName="Msg2_vals.priority" Type="1">128</Property>
     <Property LongName="Msg2_vals.autoStart" Type="0">true</Property>
   </Component>
-  <Component InstanceName="PythonBridge_1" Model="PythonBridge" Version="4.9.0" x="376" y="240" z="0">
-    <Input LongName="PythonBridge_1.desired_dist_setting" Name="desired_dist_setting">
-      <Property LongName="PythonBridge_1.desired_dist_setting.readerType" Type="1">4</Property>
-      <Property LongName="PythonBridge_1.desired_dist_setting.subsampling" Type="1">1</Property>
-    </Input>
-    <Input LongName="PythonBridge_1.host_velocity" Name="host_velocity">
-      <Property LongName="PythonBridge_1.host_velocity.readerType" Type="1">4</Property>
-      <Property LongName="PythonBridge_1.host_velocity.subsampling" Type="1">1</Property>
-    </Input>
-    <Input LongName="PythonBridge_1.actual_following_dist" Name="actual_following_dist">
-      <Property LongName="PythonBridge_1.actual_following_dist.readerType" Type="1">4</Property>
-      <Property LongName="PythonBridge_1.actual_following_dist.subsampling" Type="1">1</Property>
-    </Input>
-    <Output LongName="PythonBridge_1.follow_dist_error" Name="follow_dist_error">
-      <Property LongName="PythonBridge_1.follow_dist_error.subsampling" Type="1">1</Property>
-      <Property LongName="PythonBridge_1.follow_dist_error.fifosize" Type="1">16</Property>
-      <Property LongName="PythonBridge_1.follow_dist_error.periodic" Type="0">false</Property>
-    </Output>
-    <Output LongName="PythonBridge_1.desired_follow_dist" Name="desired_follow_dist">
-      <Property LongName="PythonBridge_1.desired_follow_dist.subsampling" Type="1">1</Property>
-      <Property LongName="PythonBridge_1.desired_follow_dist.fifosize" Type="1">16</Property>
-      <Property LongName="PythonBridge_1.desired_follow_dist.periodic" Type="0">false</Property>
-    </Output>
-    <Property LongName="PythonBridge_1.guard_begin" Type="0" SubType="128">true</Property>
-    <Property LongName="PythonBridge_1.internalInputs" Type="3" SubType="128"><![CDATA[desired_dist_setting;11==#host_velocity;11==#actual_following_dist;11==]]></Property>
-    <Property LongName="PythonBridge_1.internalOutputs" Type="3" SubType="128"><![CDATA[follow_dist_error;11==;0#desired_follow_dist;11==;0]]></Property>
-    <Property LongName="PythonBridge_1.internalProperties" Type="3" SubType="128"><![CDATA[]]></Property>
-    <ReadOnlyProperty LongName="PythonBridge_1.advance_begin_configuration" Type="3" SubType="256"><![CDATA[Advanced Configuration]]></ReadOnlyProperty>
-    <Property LongName="PythonBridge_1.deathBehavior" Type="4"><![CDATA[3|1|WAIT FOR PROCESS INDEFINITELY|KILL PROCESS AFTER TIMEOUT (5sec)|START ANOTHER PROCESS]]></Property>
-    <Property LongName="PythonBridge_1.capturePythonPrint" Type="0">true</Property>
-    <Property LongName="PythonBridge_1.useTCPOnly" Type="0">false</Property>
-    <ReadOnlyProperty LongName="PythonBridge_1.pythonPID" Type="1">19468</ReadOnlyProperty>
-    <Property LongName="PythonBridge_1.FileSHMSize" Type="1">15000000</Property>
-    <Property LongName="PythonBridge_1.useNuitka" Type="0">false</Property>
-    <Property LongName="PythonBridge_1.loadingTimeout" Type="1">8000000</Property>
-    <Property LongName="PythonBridge_1.alwaysReloadAtStart" Type="0">false</Property>
-    <ReadOnlyProperty LongName="PythonBridge_1.advance_end_configuration" Type="0" SubType="512">false</ReadOnlyProperty>
-    <ReadOnlyProperty LongName="PythonBridge_1.basic_begin_configuration" Type="3" SubType="256"><![CDATA[Basic Configuration]]></ReadOnlyProperty>
-    <Property LongName="PythonBridge_1.className" Type="3"><![CDATA[rtmaps_python]]></Property>
-    <Property LongName="PythonBridge_1.pythonExecutable" Type="3" SubType="16"><![CDATA[C:\Python313\python.exe]]></Property>
-    <Property LongName="PythonBridge_1.pythonFilename" Type="3" SubType="80"><![CDATA[D:/UWAFT/CAV/ACC Resources and MPC code/ACC_MPC_Controllers/HIL ACC MPC code and supporting files/ACC_MPC_Python_files/desired_follow_dist_error_calc.py]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/ACC_MPC_Python_files/desired_follow_dist_error_calc.py]]></Relative></Property>
-    <Property LongName="PythonBridge_1.readingPolicy" Type="4"><![CDATA[5|2|Synchro|Reactive|Sampling|Triggered by First Input|Periodic Resampling Based on Timestamps]]></Property>
-    <Property LongName="PythonBridge_1.samplingPeriod" Type="1" SubType="1">50000</Property>
-    <Property LongName="PythonBridge_1.inputsBehavior" Type="4"><![CDATA[2|1|AllowEmptyInputs|Wait4AllInputs]]></Property>
-    <ReadOnlyProperty LongName="PythonBridge_1.basic_end_configuration" Type="0" SubType="512">true</ReadOnlyProperty>
-    <ReadOnlyProperty LongName="PythonBridge_1.userSubsection" Type="3" SubType="256"><![CDATA[User Properties]]></ReadOnlyProperty>
-    <Property LongName="PythonBridge_1.guard_end" Type="0" SubType="128">true</Property>
-    <ReadOnlyProperty LongName="PythonBridge_1.userSubsectionEnd" Type="0" SubType="512">true</ReadOnlyProperty>
-    <Property LongName="PythonBridge_1.threaded" Type="0">true</Property>
-    <Property LongName="PythonBridge_1.priority" Type="1">128</Property>
-    <Property LongName="PythonBridge_1.autoStart" Type="0">true</Property>
-  </Component>
-  <Component InstanceName="RecFile_1" Model="RecFile" Version="2.17.1" x="336" y="408" z="0">
-    <Input LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.input" Name="input">
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.input.readerType" Type="1">0</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.input.subsampling" Type="1">1</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.trigger" Type="0">true</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.triggerAtStart" Type="4"><![CDATA[3|0|Do not change|True|False]]></Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.triggerBufferTime" Type="1" SubType="1">0</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.triggerBufferSize" Type="1">0</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.triggerReleaseTime" Type="1" SubType="1">0</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.triggerReleaseSize" Type="1">0</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.recordPath" Type="3" SubType="32"><![CDATA[]]></Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.alias" Type="3"><![CDATA[]]></Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.record_to_subfolder" Type="0">false</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.subfolder_relative_path" Type="3"><![CDATA[]]></Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.useTimestamp" Type="0">true</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.threaded" Type="0">true</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.priority" Type="1">128</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.timestamp" Type="0">true</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.timeOfIssue" Type="0">true</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.linefeed" Type="1">1</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.scilabFile" Type="0">false</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.initCommands" Type="3"><![CDATA[]]></Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.endCommands" Type="3"><![CDATA[]]></Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.shortFileName" Type="0">false</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.timeMilliseconds" Type="0">false</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.doubles_precision" Type="1">12</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.variable_vector_size" Type="0">false</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.row_padding_value" Type="2">0</Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.matrix_name" Type="4"><![CDATA[3|0|Recorder Input Name|Recorder Input Alias|Custom]]></Property>
-      <Property LongName="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.custom_matrix_name" Type="3"><![CDATA[]]></Property>
-    </Input>
+  <Component InstanceName="RecFile_1" Model="RecFile" Version="2.17.1" x="360" y="368" z="0">
     <Property LongName="RecFile_1.path" Type="3" SubType="32"><![CDATA[D:/UWAFT/CAV/ACC Resources and MPC code/ACC_MPC_Controllers/HIL ACC MPC code and supporting files/RTMaps_data_recordings/]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/RTMaps_data_recordings]]></Relative></Property>
-    <ReadOnlyProperty LongName="RecFile_1.recordPath" Type="3"><![CDATA[]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_1.recordPath" Type="3"><![CDATA[D:/UWAFT/CAV/ACC Resources and MPC code/ACC_MPC_Controllers/HIL ACC MPC code and supporting files/RTMaps_data_recordings/20260113_111635_RecFile_1]]></ReadOnlyProperty>
     <Property LongName="RecFile_1.fastRecordPath" Type="3" SubType="32"><![CDATA[]]></Property>
     <Property LongName="RecFile_1.comments" Type="3"><![CDATA[]]></Property>
     <Property LongName="RecFile_1.blackbox" Type="1" SubType="128">0</Property>
@@ -720,8 +791,8 @@
     <Property LongName="RecFile_1.record_to_subfolders" Type="0">false</Property>
     <Property LongName="RecFile_1.add_record_start_time_to_folder_and_file_names" Type="0">false</Property>
     <Property LongName="RecFile_1.allow_record_overwrite" Type="0">false</Property>
-    <ReadOnlyProperty LongName="RecFile_1.record_start_time" Type="3"><![CDATA[20260110_185331178000]]></ReadOnlyProperty>
-    <ReadOnlyProperty LongName="RecFile_1.triggered_record_methods" Type="3"><![CDATA[msg1_receiver_1::ego_spd_mps.element0]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_1.record_start_time" Type="3"><![CDATA[20260113_111635473000]]></ReadOnlyProperty>
+    <ReadOnlyProperty LongName="RecFile_1.triggered_record_methods" Type="3"><![CDATA[]]></ReadOnlyProperty>
     <Property LongName="RecFile_1.recs_absolute_paths" Type="0">false</Property>
     <Property LongName="RecFile_1.threaded" Type="0">false</Property>
     <Property LongName="RecFile_1.priority" Type="1">128</Property>
@@ -967,22 +1038,34 @@
   <Connection Output="Devectorizer_1.element5" Input="accel_command_smoothing_saturation_1.AccelerationMinms2"/>
   <Connection Output="Devectorizer_1.element6" Input="accel_command_smoothing_saturation_1.SetSpeedTargetms"/>
   <Connection Output="Add3Elements_1.TotalDesiredAccelerationms2" Input="accel_command_smoothing_saturation_1.DesiredTotalAccelms2"/>
-  <Connection Output="msg1_receiver_1.sim_ego_speed_mps" Input="accel_command_smoothing_saturation_1.HostVelocityms"/>
+  <Connection Output="Aurelion_data_procc.sim_ego_vel_out" Input="accel_command_smoothing_saturation_1.HostVelocityms"/>
   <Connection Output="Saturator_with_bounds_inputs_1.SignalOutput" Input="Accelerations_to_be_added.input_0"/>
   <Connection Output="LQR_Desired_Command_Accel_1.LQRAccelerationms2" Input="Accelerations_to_be_added.input_1"/>
   <Connection Output="AEB_FdFwd_Deccel_1.AEBFeedForwardDeccelms2" Input="Accelerations_to_be_added.input_2"/>
   <Connection Output="Set_Spd_Fdfwd_Deccel_1.SetSpeedFeedForwardDeccelms2" Input="Accelerations_to_be_added.input_3"/>
   <Connection Output="Set_Spd_Fdfwd_Deccel_1.SetSpeederrorms" Input="Accelerations_to_be_added.input_4"/>
+  <Connection Output="Add3Elements_1.TotalDesiredAccelerationms2" Input="Accelerations_to_be_added.input_5"/>
   <Connection Output="Saturator_with_bounds_inputs_1.SignalOutput" Input="Add3Elements_1.Inport"/>
   <Connection Output="AEB_FdFwd_Deccel_1.AEBFeedForwardDeccelms2" Input="Add3Elements_1.Inport1"/>
   <Connection Output="Set_Spd_Fdfwd_Deccel_1.SetSpeedFeedForwardDeccelms2" Input="Add3Elements_1.Inport2"/>
-  <Connection Output="msg1_receiver_1.rel_speed_mps" Input="AEB_FdFwd_Deccel_1.RelativeVelocityms"/>
+  <Connection Output="Aurelion_data_procc.rel_vel_closest" Input="AEB_FdFwd_Deccel_1.RelativeVelocityms"/>
   <Connection Output="Devectorizer_2_1.element0" Input="AEB_FdFwd_Deccel_1.PreviewTimeforDeccels"/>
   <Connection Output="Devectorizer_2_1.element1" Input="AEB_FdFwd_Deccel_1.RelativeVelocityThresholdms"/>
+  <Connection Output="msg1_receiver_1.rel_distance_m" Input="Aurelion_data_procc.relative_dist_1"/>
+  <Connection Output="msg1_receiver_1.rel_speed_mps" Input="Aurelion_data_procc.relative_vel_1"/>
+  <Connection Output="msg1_receiver_1.sim_ego_speed_mps" Input="Aurelion_data_procc.sim_ego_vel"/>
+  <Connection Output="msg1_receiver_1.sim_state" Input="Aurelion_data_procc.sim_state"/>
+  <Connection Output="msg1_receiver_1.sim_mode" Input="Aurelion_data_procc.sim_mode"/>
   <Connection Output="msg1_receiver_1.rel_distance_m" Input="Aurelion_feedback.input_0"/>
   <Connection Output="msg1_receiver_1.rel_speed_mps" Input="Aurelion_feedback.input_1"/>
   <Connection Output="msg1_receiver_1.sim_ego_speed_mps" Input="Aurelion_feedback.input_2"/>
   <Connection Output="msg1_receiver_1.sim_time" Input="Aurelion_feedback.input_3"/>
+  <Connection Output="msg1_receiver_1.sim_state" Input="Aurelion_feedback.input_4"/>
+  <Connection Output="msg1_receiver_1.sim_mode" Input="Aurelion_feedback.input_5"/>
+  <Connection Output="msg1_receiver_1.dyno_mode_request" Input="Aurelion_feedback.input_6"/>
+  <Connection Output="Aurelion_data_procc.closest_follow_dist" Input="Aurelion_feedback.input_7"/>
+  <Connection Output="Aurelion_data_procc.rel_vel_closest" Input="Aurelion_feedback.input_8"/>
+  <Connection Output="Aurelion_data_procc.sim_ego_vel_out" Input="Aurelion_feedback.input_9"/>
   <Connection Output="Smoothing_Coeffs.output" Input="Devectorizer_1.iVector"/>
   <Connection Output="Msg2_vals.output" Input="Devectorizer_1_1.iVector"/>
   <Connection Output="LQR_Coeffs.output" Input="Devectorizer_2.iVector"/>
@@ -990,18 +1073,19 @@
   <Connection Output="accel_command_smoothing_saturation_1.FinalAccelerationCommandms2" Input="DiscreteTimeIntegrator_1.IntegratorIn"/>
   <Connection Output="accel_command_smoothing_saturation_1.FinalAccelerationCommandms2" Input="Final_Accel_Cmmd.input_0"/>
   <Connection Output="DiscreteTimeIntegrator_1.IntegratorOut" Input="Final_Accel_Cmmd.input_1"/>
-  <Connection Output="PythonBridge_1.follow_dist_error" Input="LQR_Desired_Command_Accel_1.FollowingDistanceErrorm"/>
-  <Connection Output="msg1_receiver_1.rel_speed_mps" Input="LQR_Desired_Command_Accel_1.RelativeVelocityms"/>
+  <Connection Output="Devectorizer_1.element0" Input="Following_Distance_Calc.desired_dist_setting"/>
+  <Connection Output="Aurelion_data_procc.sim_ego_vel_out" Input="Following_Distance_Calc.host_velocity"/>
+  <Connection Output="Aurelion_data_procc.closest_follow_dist" Input="Following_Distance_Calc.actual_following_dist"/>
+  <Connection Output="Aurelion_data_procc.sim_state_out" Input="Following_Distance_Calc.sim_state_in"/>
+  <Connection Output="Following_Distance_Calc.follow_dist_error" Input="LQR_Desired_Command_Accel_1.FollowingDistanceErrorm"/>
+  <Connection Output="Aurelion_data_procc.rel_vel_closest" Input="LQR_Desired_Command_Accel_1.RelativeVelocityms"/>
   <Connection Output="Devectorizer_2.element0" Input="LQR_Desired_Command_Accel_1.K_dist_err"/>
   <Connection Output="Devectorizer_2.element1" Input="LQR_Desired_Command_Accel_1.K_rel_velocity"/>
-  <Connection Output="Devectorizer_1.element0" Input="PythonBridge_1.desired_dist_setting"/>
-  <Connection Output="msg1_receiver_1.sim_ego_speed_mps" Input="PythonBridge_1.host_velocity"/>
-  <Connection Output="msg1_receiver_1.rel_distance_m" Input="PythonBridge_1.actual_following_dist"/>
   <Connection Output="Devectorizer_2.element2" Input="Saturator_with_bounds_inputs_1.UpperBound"/>
   <Connection Output="LQR_Desired_Command_Accel_1.LQRAccelerationms2" Input="Saturator_with_bounds_inputs_1.SignalInput"/>
   <Connection Output="Devectorizer_2.element3" Input="Saturator_with_bounds_inputs_1.LowerBound"/>
   <Connection Output="Devectorizer_1.element6" Input="Set_Spd_Fdfwd_Deccel_1.SetSpeedTargetms"/>
-  <Connection Output="msg1_receiver_1.sim_ego_speed_mps" Input="Set_Spd_Fdfwd_Deccel_1.HostVelocityms"/>
+  <Connection Output="Aurelion_data_procc.sim_ego_vel_out" Input="Set_Spd_Fdfwd_Deccel_1.HostVelocityms"/>
   <Connection Output="Devectorizer_2_1.element2" Input="Set_Spd_Fdfwd_Deccel_1.PreviewTimeforDeccels"/>
   <Connection Output="SimulinkDSpaceDeserialize_1.output0" Input="Simulink_feedback.input_0"/>
   <Connection Output="SimulinkDSpaceDeserialize_1.output1" Input="Simulink_feedback.input_1"/>
@@ -1012,9 +1096,6 @@
   <Connection Output="Devectorizer_1_1.element1" Input="msg2_transmitter_1.dyno_mode_state"/>
   <Connection Output="DiscreteTimeIntegrator_1.IntegratorOut" Input="msg2_transmitter_1.cosim_feedback"/>
   <Connection Output="msg1_receiver_1.sim_time" Input="msg2_transmitter_1.sim_time"/>
-  <Connection Input="RecFile_1.msg1_receiver_1::ego_spd_mps.element0.input" Output="msg1_receiver_1.sim_ego_speed_mps">
-    <Record Method="mfile" neverskipping="false" useTimestamp="true"/>
-  </Connection>
   <RTBoardView ID="JavaStudio1.0">
     <ComponentBox InstanceName="Devectorizer_1_1" reversed="false">
       <Description/>
@@ -1023,6 +1104,9 @@
       <Description/>
     </ComponentBox>
     <ComponentBox InstanceName="Float_constants_generator_2_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ComponentBox InstanceName="Following_Distance_Calc_1" reversed="false">
       <Description/>
     </ComponentBox>
     <ComponentBox InstanceName="Simulink_feedback_1" reversed="false">
@@ -1044,6 +1128,7 @@
     <ConnectionShape InstanceName="Accelerations_to_be_added.input_2" color="0"/>
     <ConnectionShape InstanceName="Accelerations_to_be_added.input_3" color="0"/>
     <ConnectionShape InstanceName="Accelerations_to_be_added.input_4" color="0"/>
+    <ConnectionShape InstanceName="Accelerations_to_be_added.input_5" color="0"/>
     <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMax" color="0"/>
     <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.AccelMin" color="0"/>
     <ConnectionShape InstanceName="AccelSmoothingAndSaturation_4RTMaps_1.DriverSetSpeed" color="0"/>
@@ -1059,10 +1144,21 @@
     <ConnectionShape InstanceName="AEB_FdFwd_Deccel_1.PreviewTimeforDeccels" color="0"/>
     <ConnectionShape InstanceName="AEB_FdFwd_Deccel_1.RelativeVelocityms" color="0"/>
     <ConnectionShape InstanceName="AEB_FdFwd_Deccel_1.RelativeVelocityThresholdms" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_data_procc.relative_dist_1" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_data_procc.relative_vel_1" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_data_procc.sim_ego_vel" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_data_procc.sim_mode" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_data_procc.sim_state" color="0"/>
     <ConnectionShape InstanceName="Aurelion_feedback.input_0" color="0"/>
     <ConnectionShape InstanceName="Aurelion_feedback.input_1" color="0"/>
     <ConnectionShape InstanceName="Aurelion_feedback.input_2" color="0"/>
     <ConnectionShape InstanceName="Aurelion_feedback.input_3" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_feedback.input_4" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_feedback.input_5" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_feedback.input_6" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_feedback.input_7" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_feedback.input_8" color="0"/>
+    <ConnectionShape InstanceName="Aurelion_feedback.input_9" color="0"/>
     <ConnectionShape InstanceName="Devectorizer_1.iVector" color="0"/>
     <ConnectionShape InstanceName="Devectorizer_1_1.iVector" color="0"/>
     <ConnectionShape InstanceName="Devectorizer_2.iVector" color="0"/>
@@ -1070,6 +1166,10 @@
     <ConnectionShape InstanceName="DiscreteTimeIntegrator_1.IntegratorIn" color="0"/>
     <ConnectionShape InstanceName="Final_Accel_Cmmd.input_0" color="0"/>
     <ConnectionShape InstanceName="Final_Accel_Cmmd.input_1" color="0"/>
+    <ConnectionShape InstanceName="Following_Distance_Calc.actual_following_dist" color="0"/>
+    <ConnectionShape InstanceName="Following_Distance_Calc.desired_dist_setting" color="0"/>
+    <ConnectionShape InstanceName="Following_Distance_Calc.host_velocity" color="0"/>
+    <ConnectionShape InstanceName="Following_Distance_Calc.sim_state_in" color="0"/>
     <ConnectionShape InstanceName="LQR_Desired_Command_Accel_1.FollowingDistanceErrorm" color="0"/>
     <ConnectionShape InstanceName="LQR_Desired_Command_Accel_1.K_dist_err" color="0"/>
     <ConnectionShape InstanceName="LQR_Desired_Command_Accel_1.K_rel_velocity" color="0"/>
@@ -1084,9 +1184,6 @@
     <ConnectionShape InstanceName="msg2_transmitter_1.cosim_feedback" color="0"/>
     <ConnectionShape InstanceName="msg2_transmitter_1.dyno_mode_state" color="0"/>
     <ConnectionShape InstanceName="msg2_transmitter_1.sim_time" color="0"/>
-    <ConnectionShape InstanceName="PythonBridge_1.actual_following_dist" color="0"/>
-    <ConnectionShape InstanceName="PythonBridge_1.desired_dist_setting" color="0"/>
-    <ConnectionShape InstanceName="PythonBridge_1.host_velocity" color="0"/>
     <ConnectionShape InstanceName="RecFile_1.LQR_forRTMaps10ms_1.Outport.input" color="0"/>
     <ConnectionShape InstanceName="Saturator_with_bounds_inputs_1.LowerBound" color="0"/>
     <ConnectionShape InstanceName="Saturator_with_bounds_inputs_1.SignalInput" color="0"/>

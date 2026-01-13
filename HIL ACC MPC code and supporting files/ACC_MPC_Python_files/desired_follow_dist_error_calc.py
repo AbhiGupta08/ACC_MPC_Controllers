@@ -4,6 +4,8 @@ from rtmaps.base_component import BaseComponent  # base class
 import numpy as np
 import math
 
+import importlib # Use this code library to reload this code at bridge component startup in case changes made to code
+
 # Python class that will be called from RTMaps.
 class rtmaps_python(BaseComponent):
     
@@ -16,11 +18,16 @@ class rtmaps_python(BaseComponent):
         self.add_input("host_velocity", rtmaps.types.FLOAT64) # host/ego vehicle's longitudinal velocity feedback; in m/s
         self.add_input("actual_following_dist", rtmaps.types.FLOAT64) # this is the actual following distance from lead vehicle value reported by radar/simulation
 
+        # For AURELION co-simulation
+        self.add_input("sim_state_in", rtmaps.types.FLOAT64) # simulation state 0 = INACTIVE; 1 = ACTIVE
+
         self.add_output("follow_dist_error", rtmaps.types.FLOAT64) # the following distance error calculated
         self.add_output("desired_follow_dist", rtmaps.types.FLOAT64) # the desired following distance being determined
         
 # Birth() will be called once at diagram execution startup
     def Birth(self):
+        # importlib.reload()
+
         print("Passing through Birth()")
 
 # Core() is called every time you have a new inputs available, depending on your chosen reading policy
@@ -30,6 +37,9 @@ class rtmaps_python(BaseComponent):
         vh = self.inputs["host_velocity"].ioelt.data # host velocity in m/s
         act_foll_dist = self.inputs["actual_following_dist"].ioelt.data
 
+        # need for AURELION
+        sim_state = self.inputs["sim_state_in"].ioelt.data # simulation state 0 = INACTIVE; 1 = ACTIVE
+        
         vh_mph = float(vh)*2.237 # converting ego/host speed from meters per sec. to miles per hour
 
         # Initializing the values for the following distance bounds (in meters) based on a 0 mph vehicle speed (at standstill)
@@ -45,9 +55,13 @@ class rtmaps_python(BaseComponent):
         
         # desired following distance which is an average between bounds depending on des_dist_const value from 1.5 to 3: eg. 3 would be a desired dist. that's a third of the distance from the CFD
         des_foll_dist = ((float(des_dist_const)-1)*CFD + FFD)/float(des_dist_const)
-        foll_dist_error = float(des_foll_dist) - float(act_foll_dist)
+        foll_dist_error_calc = float(des_foll_dist) - float(act_foll_dist)
         
-        self.write("follow_dist_error", foll_dist_error)
+        if sim_state == 0.0:
+            self.write("follow_dist_error", 0.0)
+        else:
+            self.write("follow_dist_error", foll_dist_error_calc)
+
         self.write("desired_follow_dist", des_foll_dist)
         
 # Death() will be called once at diagram execution shutdown

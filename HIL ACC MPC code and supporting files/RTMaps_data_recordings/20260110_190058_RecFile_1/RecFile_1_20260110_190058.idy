@@ -1,7 +1,0 @@
-RTMaps Runtime Release v4.13.0 (build 265472) for Win64
-Copyright (c) 2000-2025 INTEMPORA S.A.S.
-This product is licensed to: Gupta (RLM).
-Session: unspecified
-Launched at 19:00:58.850 (10/01/2026) UTC-05:00 - 00:00:58.850 (11/01/2026) UTC
-[Misc]
-00:00.066493 @ Record msg1_receiver_1::ego_spd_mps.element0(Devectorizer.oElement[0x4,,,16,1]) as mfile

@@ -1,0 +1,44 @@
+%implements s0_b0_g4wt_ModelClassDefinition "C"
+%function ModelClassDefinition(block) Output
+%openfile tmp
+class DiscreteTimeDerivative final 
+{
+  public:
+    %<SLibFillInPublicClassMembers()>
+    /* Tunable parameters */
+    static P_DiscreteTimeDerivative_T DiscreteTimeDerivative_P;
+        /* Root inports set method */
+void setExternalInputs(const ExtU_DiscreteTimeDerivative_T *pExtU_DiscreteTimeDerivative_T)
+    {
+        DiscreteTimeDerivative_U = *pExtU_DiscreteTimeDerivative_T;
+    }
+        /* Root outports get method */
+const ExtY_DiscreteTimeDerivative_T &getExternalOutputs() const
+    {
+        return DiscreteTimeDerivative_Y;
+    }
+        /* Initial conditions function */
+void initialize();
+        /* model step function */
+%<FcnStaticOnEmptyOutputUpdateMethod()>void step()%<AddConstToStepIfNeccessary("Outputs")>;
+        /* model terminate function */
+%<FcnStaticOnEmptyTermMethod()>void terminate()%<AddConstToTermIfNecessary("terminate")>;
+        /* Constructor */
+DiscreteTimeDerivative();
+        /* Destructor */
+~DiscreteTimeDerivative();
+  protected:
+    %<SLibFillInProtectedClassMembers()>
+  private:
+    /* External inputs */
+    ExtU_DiscreteTimeDerivative_T DiscreteTimeDerivative_U;
+    /* External outputs */
+    ExtY_DiscreteTimeDerivative_T DiscreteTimeDerivative_Y;
+    /* Block states */
+    DW_DiscreteTimeDerivative_T DiscreteTimeDerivative_DW;
+    %<SLibFillInPrivateClassMembers()>
+    %<SLibFillInLastPrivateClassMembers()>
+};
+%closefile tmp
+%return tmp
+%endfunction
